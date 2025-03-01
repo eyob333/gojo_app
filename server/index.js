@@ -16,6 +16,10 @@ app.use( (req, res, next) => {
     next();
 })
 
+app.get('/', (req, res) => {
+  res.send('authorized')
+})
+
 app.get('/data',  async(req, res) => {
     const fileContent = await fs.readFile( './data/data.json')
     const data = JSON.parse(fileContent)
