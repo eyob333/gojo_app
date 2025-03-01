@@ -26,3 +26,4 @@ dist-ssr
 
 #enviroment variables
 .env
+.ini
