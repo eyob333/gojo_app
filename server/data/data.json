@@ -1,0 +1,16 @@
+[
+  { "topPics": 
+      {
+        "id": "",
+        "realEstate": "some",
+        "project": "some other",
+        "price": "49",
+        "features": "",
+        "location": "",
+        "description": "",
+        "images": [
+          "images/"
+        ]
+      }
+  }
+]
