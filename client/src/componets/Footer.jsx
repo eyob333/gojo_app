@@ -12,7 +12,7 @@ function Footer(){
                     <div>
                         <h5>Quick links</h5>
                     </div>
-                    <div>
+                    <div className='footer-links'>
                         <p>Home</p>
                         <p>Real e-states</p>                        
                         <p>Top Pics</p>
@@ -23,7 +23,7 @@ function Footer(){
                     <div>
                         <h5>Learn more</h5>
                     </div>
-                    <div>
+                    <div className='footer-links' >
                         <p>About us</p>
                         <p>Contact us</p>
                         <p>Feedback</p>
@@ -34,7 +34,7 @@ function Footer(){
                     <div>
                         <h5>For developers</h5>
                     </div>
-                    <div>
+                    <div className='footer-links' >
                         <p>API</p>                       
                         <p>Git-hub</p>
                     </div>

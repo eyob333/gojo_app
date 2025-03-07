@@ -1,0 +1,43 @@
+.admin-heading{
+    margin-top: 30px;
+}
+.admin-nav{
+    padding: 2%;
+    padding-right: 0;
+}
+
+.admin-nav{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 20% 80%;
+    gap: 10px;
+    padding: 5% 2%;  
+    /* padding-right: 0;  
+    margin-top: 15px; */
+}
+
+.admin-option{
+    display: grid;
+    gap: 20px;
+
+}
+
+.admin-option-details{
+    /* padding: 5px 5x; */
+    padding-right: 0;
+    background-color: rgba(61, 108, 138, 0.119);   
+    height: fit-content;
+    border-radius: 1%;
+}
+
+.admin-option-btn{
+    text-align: left;
+    border: 0 none;
+    border-radius: 0;
+    padding: 5px 10px;
+}
+
+.admin-option-btn h4{
+    margin: 0;
+    font-size: 1rem;
+}

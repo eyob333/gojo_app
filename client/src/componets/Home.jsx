@@ -1,4 +1,6 @@
 import './Home.css'
+
+
 function Home(){
 
     return <>
@@ -41,7 +43,87 @@ function Home(){
                 </div>
                 <input type="text" />              
             </div>
+            
 
+            <section id="shows">
+                <div className="shows">
+                    <h2>best offers</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. </p>
+                    <div className="show-items">
+
+                        <div className="show-item">
+                            <img src="./stock.jpg" alt="" />
+                            <div className="details">
+                                <h3>dolor sit</h3>
+                                <h4>$24</h4>
+                                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>                        
+                            </div>
+
+                            
+                        </div>
+                        <div className="show-item">
+                            <img src="./stock.jpg" alt="" />
+                            <div className="details">
+                                <h3>Lorem ipsum</h3>
+                                <h4>$43</h4>
+                                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>                        
+                            </div>
+
+                        </div>
+                        <div className="show-item">
+                            <img src="./stock.jpg" alt="" />
+                            <div className="details">
+                                <h3>consectetur</h3>
+                                <h4>$52</h4>
+                                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>
+                            </div>
+
+                        </div>                
+                    </div>
+                </div>
+                <div className="shows">
+                    <h2>Top real estates</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. </p>
+                    <div className="show-items">
+
+                        <div className="show-item">
+                            <img src="./stock.jpg" alt="" />
+                            <div className="details">                    
+                                <h3>dolor sit</h3>
+                                <h4>$24</h4>
+                                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>                     
+                            </div>
+
+                        </div>
+                        <div className="show-item">
+                            <img src="./stock.jpg" alt="" />
+                            <div className="details">
+                                <h3>Lorem ipsum</h3>
+                                <h4>$43</h4>
+                                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>                        
+                            </div>
+
+                        </div>
+                        <div className="show-item">
+                            <img src="./stock.jpg" alt="" />
+                                <div className="details">
+                                <h3>consectetur</h3>
+                                <h4>$52</h4>
+                                <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.</p>                        
+                            </div>
+                        </div>                
+                    </div>
+                </div>
+            </section>
+            
         </div>
     </>  
 }

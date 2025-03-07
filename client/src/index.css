@@ -38,6 +38,5 @@ body {
   @media ( 576px <= width <= 768px){
     body {
       overflow-x: hidden;
-      padding: .1% .5%;
     }
   }

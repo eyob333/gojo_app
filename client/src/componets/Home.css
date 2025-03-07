@@ -35,6 +35,7 @@
     border-style: solid;
     left: 0
   }
+
   
   
   /**************** Main *********************/
@@ -117,11 +118,45 @@
   }
 
   
+  #shows{
+    margin-top: 30vh;
+    padding: 0 5%;
+  }
+  .shows{
+    margin-bottom: 40px;
+  }
+  
+  .show-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 20px;
+  }
+  .show-item img{
+    height:fit-content;
+    border-radius: 3%;
+  }
+  .show-item{
+    border-width: 1px;
+    /* border-style: solid; */
+    border-radius: 3%;
+    margin-top: 4%;
+    background-color: #4f5875;
+  }
+  .show-item .details{
+    padding: 0 4%;
+  }
+  .show-item h3, p {
+    margin: 0;
+  }
+  .show-item  p {
+    font-family:'Courier New', Courier, monospace;
+    color: #d8e4e0;
+    font-size: .8rem;
+    width: 80%;
+  }
 
   @media ( 576px <= width <= 768px){
-    body {
-      overflow-x: hidden;
-    }
   
     main{
       grid-template-columns: 75%;
@@ -147,6 +182,9 @@
     img{
       width: 100%;
       height: 100%;
+    }
+    .show-items{
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -196,9 +234,9 @@
     margin-top: 100%;
   }
   .element-title{
-    font-family: 'Kraftstoff', sans-serif;                                           
+    /* font-family: 'Kraftstoff', sans-serif;                                            */
     font-size: 1.8rem;
-    letter-spacing: .2rem;                                        
+
   }
   .home-cards{
     grid-template-columns: 100%;
@@ -214,4 +252,10 @@
     margin-top: 10%;
   }
 
+  /* shows */
+  .show-items{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  
 }
