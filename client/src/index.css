@@ -10,12 +10,13 @@ body {
     /* background: rgb(224,215,219);
     background: radial-gradient(circle, rgba(224,215,219,1) 0%, rgba(156,187,177,1) 50%); */
     background: rgb(203,228,217);
-    background: linear-gradient(45deg, rgb(19, 50, 68) 70%,rgb(24, 67, 82) 75%,rgb(37, 83, 102) 90%, rgb(48, 104, 128) 100%);
+    background: linear-gradient(45deg, rgb(0, 0, 0) 95%,rgb(159, 169, 174) 99%, rgb(93, 93, 94) 100%);
     padding: .1% 5%;
+    margin: 0;
   
   }
 
-  h1, h2, h3, h4, h5, h6, p{
+  h1, h2, h3, h4, h5, h6, p, i{
     color: #ffff;
     font-family: 'Shapeingo', sans-serif;
                                                 
@@ -32,6 +33,10 @@ body {
     background: transparent;
     color:  white;
     width: 100%;
+  }
+
+  canvas, body{
+    overflow-x: hidden;
   }
   
 

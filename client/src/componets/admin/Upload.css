@@ -1,0 +1,61 @@
+.upload {
+    padding: 10px 40px;
+    width: 80%;
+    color: aliceblue;
+}
+
+.upload input{
+    height: 30px;
+    background-color: rgba(132, 178, 210, 0.046);
+    color: aliceblue;
+    border: 1px solid transparent;
+}
+.upload input:focus{
+    color: aliceblue;
+}
+
+.upload textarea{
+    color: aliceblue;
+
+}
+.upload textarea:focus{
+    color: aliceblue;
+}
+.upload textarea{
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.upload button {
+    margin-top: 20px;
+    width: 100px;
+    padding: 4px 8px;
+}
+.input-field{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+label p{
+    font-size: .8rem;
+}
+.input-item{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 2px;
+}
+.footer-links{
+    display: grid;
+    gap: 10px;
+}
+
+#description,#details{
+    height: 80px;
+}
+
+@media (width < 530px) {
+    .input-field{
+        grid-template-columns: 100%;
+    
+    }
+}

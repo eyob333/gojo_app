@@ -1,0 +1,23 @@
+.realstae-home{
+    padding: 2px 20px;
+    margin-left: 20px;
+}
+.realestate-list-heading{
+    margin-top: 30px;
+}
+.realestae-body{
+    display: grid;
+    
+    gap: 20px;
+    padding: 30px;
+
+}
+
+.listitems{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 20% 80%;
+}
+.err-load{
+    padding: 3% 15%;
+}

@@ -1,0 +1,30 @@
+.database{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.databae-headers{
+    display: grid; 
+    justify-content: space-between;
+    grid-template-columns: repeat(4, .2fr);
+    margin: 0;
+    padding: 0;
+}
+.databae-headers button{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100px;
+    border-radius: 0;
+}
+
+.databae-headers button h4{
+    margin: 0;
+    margin-top: 10px;
+    border: 0;
+}
+.database-mod{
+    padding: 0;
+    margin: 0;
+}

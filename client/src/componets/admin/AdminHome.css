@@ -11,24 +11,25 @@
     grid-template-columns: 20% 80%;
     grid-template-rows: 20% 80%;
     gap: 10px;
-    padding: 5% 2%;  
+    padding: 2% 2%;  
     /* padding-right: 0;  
     margin-top: 15px; */
 }
 
 .admin-option{
     display: grid;
+    margin-top: 70px;
     gap: 20px;
 
 }
 
 .admin-option-details{
-    /* padding: 5px 5x; */
-    padding-right: 0;
-    background-color: rgba(61, 108, 138, 0.119);   
-    height: fit-content;
+    background-color: rgba(61, 108, 138, 0.208);   
+    height: 100vh;
     border-radius: 1%;
 }
+
+
 
 .admin-option-btn{
     text-align: left;

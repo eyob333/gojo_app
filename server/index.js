@@ -1,57 +1,93 @@
-import DataBase from './database.js';
-import express from 'express';
-import bodyParser from 'body-parser';
-import Uploader from './controllers/claudnary.js';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import bodyParser from "body-parser";
+import ImageUploader from "./utils/imageUploader.js";
+import DataBase from "./database.js";
 
-const app = express()
-const Db = new DataBase()
 
-app.use(bodyParser.json())
-app.use(express.static('public'))
+dotenv.config();
 
-app.use( (req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-})
+const app = express();
+app.use(bodyParser.json({ limit: "50mb" })); // Increased limit to handle large Base64 images
+app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('authorized')
-})
+const db = new DataBase()
+const uploader = new ImageUploader()
 
-app.get('/data',  async(req, res) => {
-    const fileContent = await fs.readFile( './data/data.json')
-    const data = JSON.parse(fileContent)
-    res.status(200).json({data: data})
-})
 
-app.get('/data/some', async(req, res) => {
-    const response = Db.findDb()
-})
-app.get('/data/image', (req,res) => {
-    // const response = await Db.upload_imgae()
-    // console.log(response)
-
-    Db.upload_imgae()
-    res.send("we good")
-})
-
-app.post('/admin/something', async (req, res) => {
-  const data = req.body.data;
-  const some = {
-    some: "spp",
-    ...data
+app.get('/admin/database', async(req, res) => {
+  try{
+    const data = await db.findCollection();
+    res.send(data);    
+  } catch (err){
+    res.send(err);
   }
-  console.log(some)
-//Db.addData(some)
-  res.status(200).json({ message: 'User data added!' });
+})
+
+app.post("/admin/database/upload", async (req, res) => {
+
+  try{
+    const url = await uploader.upload_imgs( req, res)
+    const reqData = req.body.data
+    const schema = req.body.schema
+
+    const data = reqData
+
+    if (schema === 'realestate'){
+      data = {
+        icons: url[0],
+        ...reqData
+      }
+    }
+    else if ( schema === 'properties'){
+      data = {
+        image_urls: {
+          main: url[0],
+          all: url
+        },
+        ...reqData
+      }
+    }
+
+    const database = await db.addData(data, schema)
+    console.log(database)
+    res.send("okay").status(200)
+  } catch (err){
+    res.send(err)
+  }
+  
 });
 
+app.post('/admin', async(req, res) => {
+  const filter = req.body.filter
+  const schema = req.body.schema
+  const data = req.body.data
+  const resData = await db.findDb(filter, schema)
 
-app.route('/admin')
+  if (resData.password === data.password){
+    res.send("Authorized")    
+  }
+  else {
+    res.send("un authorized")
+  }
 
-app.listen(8080, () => {
-    console.log('running on port 8080')
 })
+
+app.get('/realestate', async(req, res) => {
+  const resposne = await db.findDb({}, "realestate", "id name icons" )
+  console.log(resposne)
+  res.send(resposne)
+})
+
+
+app.get('/realstate/properties', async(req, res) => {
+  const filter = req.body.filter
+  const schema = req.body.schema
+
+  const response = await db.findDb(filter, schema)
+})
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

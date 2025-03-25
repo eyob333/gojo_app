@@ -4,7 +4,9 @@ function Header(){
     
     return <header id="header">
                 <div>
-                <h1>GH</h1>
+                    <div id='header-logo' className='logo'>
+                        <img src="/gojo1.png" alt="" />
+                    </div>
             </div>
             <div className="nav-btn">
                 <button className='nav-item'><p>Products</p></button>

@@ -1,39 +1,46 @@
-#main button{
-    margin-top: 40px;
-    padding: 10px;
-    width: fit-content;
-    background-color: #7a7b8c;
-    border-color: transparent;
-    font-weight: 600;
+main{
+  height: 100vh;
+}
+#main {
+  width: 35%;
+}
+
+  .main-heading{
+    /* width: 40%; */
+    margin: 0;
   }
-  
   #main h1 {    
     font-family: 'eBuenaClassic', sans-serif;                                                                                                                                                                              
-    font-weight: 400;
+    font-weight: 100;
     color: #ffffff;
-    font-size: 7rem;
+    font-size: 5.5rem;
     margin: 0;
-    padding-top: 10%;
+    padding-top:0;
     letter-spacing: .2rem;
   }
-    
   #main h2{
     font-family: 'Shapeingo', sans-serif;
     font-weight: 400;                                        
     margin-top: 5%;
     padding-bottom: 1%;
     font-size: 1.1rem;
-    /* letter-spacing: .rem; */
     color: #dee2e6;
-    width: 70%; 
   }    
   
   main hr{
-    width: 50%;
+    width: 80%;
     color: #7C9A90;
     margin-left: 0;
     border-style: solid;
     left: 0
+  }
+
+  canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
   }
 
   
@@ -42,20 +49,20 @@
   
   main{
     display: grid;
-    grid-template-columns: 50% 100%;
+    /* grid-template-columns: 50% 100%; */
     /* gap: 50px; */
-    width: 100%;
     padding-top: 5%;
     margin-bottom: 70px;
   }
   /* #main{
     width: 40%;
   } */
-  .img{
+  /* .img{
     padding-top: 1%;
     height: 100%;
     width: 50%;
-  }
+  } */
+
   img{
     height: 100%;
     width: 100%;

@@ -5,8 +5,6 @@ import busboy from 'busboy'
 class Uploader{
     constructor(){
         this.initialize()
-        this.num = 4
-
     }
 
     initialize(){

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import FileUpload from "./Upload";
+import FileUpload from "../componets/admin/Upload";
 import axios from "axios";
 import AdminHome from "../componets/admin/AdminHome";
+import './pagesCss/admin.css'
 
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
@@ -37,10 +38,9 @@ const AdminLogin = () => {
 
   return ( <>
     
-
-      { !isAuth ? <div style={{ maxWidth: "300px", padding: "20px"}}>
+      { !isAuth ? <div className="admin-auth">
           <h3>Admin Login</h3>
-          <form onSubmit={handleLogin}>
+          <form className="admin-auth-form" onSubmit={handleLogin}>
             <input
               type="text"
               placeholder="Username or email"
@@ -63,7 +63,7 @@ const AdminLogin = () => {
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>
-       </div> : <AdminHome />}      
+       </div> : <AdminHome admin={username} />}      
   </>);
 };
 

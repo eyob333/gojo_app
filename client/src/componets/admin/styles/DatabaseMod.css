@@ -1,0 +1,16 @@
+.database-icons-div{
+    display: grid;
+    grid-template-columns: repeat(3, .25fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 50px;
+}
+.database-icons{
+    display: flex;
+    justify-content: center;
+}
+.database-icon{
+    max-width: 30px;
+    max-height: 30px;
+}

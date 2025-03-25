@@ -1,0 +1,67 @@
+.defalut{
+    margin: 100px;
+    margin-bottom: 150px;
+}
+
+.error-container {
+    text-align: center;
+    padding: 40px;
+    /* background-color: #fff; */
+    /* box-shadow: 0 4px 8px rgba(220, 187, 187, 0.1); */
+}
+
+.error-code {
+    font-size: 6em;
+    font-weight: bold;
+    font-family: inherit;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-code i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.error-message {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.error-message-sub {
+    font-size: 1em;
+    color: #e8e0e0;
+    margin-bottom: 30px;
+}
+
+.return-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db; /* Real estate blue */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #2980b9;
+}
+
+@media ( 576px <= width <= 768px){
+
+
+}
+
+
+@media (576px > width){
+    .error-container{
+        margin: 0;
+        padding: 0;
+        margin-top: 50px;
+    }
+}

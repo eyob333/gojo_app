@@ -37,10 +37,24 @@
     width: 20px;
     height: 20px;
   }
-  
+  #footer-logo{
+    display: grid;
+    width: 100px;
+    height: 100px;
+  }
+  @media ( 576px <= width <= 768px){
+    #footer-logo{
+      width: 80px;
+      height: 80px;
+    }
+  }
+
   @media ( width <= 576px) {
+    #footer-logo{
+      width: 80px;
+      height: 80px;
+    }
     .footer-logo{
-      justify-content: left;
       width: 100px;
     }
     .footer-list{

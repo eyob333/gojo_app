@@ -1,0 +1,27 @@
+
+.gear-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.gear {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: rotateGear 10s linear infinite;
+}
+.gear.small {
+    width: 60px;
+    height: 60px;
+    top: 55px;
+    left: 66px;
+    animation: rotateGearReverse 4s linear infinite;
+}
+@keyframes rotateGear {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes rotateGearReverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}

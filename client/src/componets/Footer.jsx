@@ -4,8 +4,10 @@ function Footer(){
 
     return  <section id="footer">
         <div className="footer-detail">
-            <div className="footer-logo">
-                <h1>GH</h1>
+            <div className='footer-logo'>
+                <div id='footer-logo'  className="logo">
+                    <img src="/gojo1.png" alt="" />
+                </div>
             </div>
             <div className="footer-list">
                 <div className="footer-item">

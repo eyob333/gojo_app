@@ -1,0 +1,14 @@
+.admin-auth{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+}
+.admin-auth-form{
+    padding: 100px;
+    padding-top: 0;
+    padding-left: 0;
+    width: 300px;
+
+}
