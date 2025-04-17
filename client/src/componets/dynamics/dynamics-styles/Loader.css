@@ -63,7 +63,7 @@
     }
 }
 
-.database{
+.loading-container.database{
     display: flex;
     justify-content: center;
     align-items: center;

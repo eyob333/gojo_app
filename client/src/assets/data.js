@@ -33,7 +33,7 @@ const data = [ {
         name:"site"
     }, {
         type:"text", 
-        placeholder:"someone@testmail.com, 0943942493",
+        placeholder:"someone@testmail.com, 0943942493, solomon arega",
         id:"sales",
         name:"sales"
     }, {
@@ -49,6 +49,74 @@ const data = [ {
         placeholder:"add some description here",
         root:"textarea"
     },
+]
+
+const propertiesData = [ {
+    type:"text", 
+    placeholder:"Ayat",
+    id:"realstate",
+    name:"realstate",
+ }, {
+    type:"number", 
+    id:"price",
+    name:"price",  
+    placeholder:"15000"
+ }, {
+    type:"text",
+    id:"price_type", 
+    name:"price_type",
+    placeholder:"/sq (m)"
+ }, {
+    type:"text",
+    id:"project",
+    name:"project",
+    placeholder:"hevens gate"
+ }, {
+    type:"text",
+    id:"location",
+    name:"location",
+    placeholder:"6kilo new aau",
+
+}, {
+    type:"number" ,
+    placeholder:"enter the totoal area" ,
+    id:"area",
+    name:"area"
+}, {
+    type:"number", 
+    placeholder:"totoal roof height",
+    id:"height",
+    name:"height"
+}, {
+    type:"text",
+    id:"type",
+    name:"type",
+    placeholder:"Appartment, condo",
+    
+}, {
+    type:"checkbox",
+    id:"pool",
+    name:"pool",
+    placeholder:"",
+}, {
+    type:"text",
+    id:"special",
+    name:"special",
+    placeholder:"enter special features",
+    root:"textarea"
+},  {
+    type:"text",
+    id:"details",
+    name:"details",
+    placeholder:"input details here",
+    root:"textarea"
+}, {
+    type:"text",
+    id:"description",
+    name:"description",
+    placeholder:"add some description here",
+    root:"textarea"
+},
 ]
 
 const uploadConfig = [
@@ -160,4 +228,4 @@ const deals = [{
 ]
 
 
-export {data, deals, realestate}
+export {data, deals, realestate, propertiesData}

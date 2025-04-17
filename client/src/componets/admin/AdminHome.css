@@ -10,17 +10,18 @@
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 20% 80%;
-    gap: 10px;
+    gap: 40px;
     padding: 2% 2%;  
-    /* padding-right: 0;  
-    margin-top: 15px; */
+    /* padding-right: 0;   */
+    /* padding-bottom: 50%; */
+    /* margin-bottom: 10%;  */
+    /* min-height: 100vh; */
 }
 
 .admin-option{
     display: grid;
     margin-top: 70px;
     gap: 20px;
-
 }
 
 .admin-option-details{
@@ -28,8 +29,6 @@
     height: 100vh;
     border-radius: 1%;
 }
-
-
 
 .admin-option-btn{
     text-align: left;
@@ -41,4 +40,12 @@
 .admin-option-btn h4{
     margin: 0;
     font-size: 1rem;
+}
+.admin-option-btn.active{
+    border-bottom: 2px; 
+    border-radius: 10%;
+    border-style: outset;
+    color: rgb(60, 83, 86);
+    border-bottom-right-radius: 0%;
+
 }

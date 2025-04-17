@@ -7,10 +7,8 @@ body {
     background: linear-gradient(90deg, rgba(199,224,213,1) 31%, rgba(185,212,203,1) 72%, rgba(136,181,169,1) 100%); */
     /* background: rgb(203,228,217);
     background: linear-gradient(90deg, rgba(203,228,217,1) 31%, rgba(157,188,178,1) 72%, rgba(95,154,138,1) 100%); */
-    /* background: rgb(224,215,219);
-    background: radial-gradient(circle, rgba(224,215,219,1) 0%, rgba(156,187,177,1) 50%); */
-    background: rgb(203,228,217);
-    background: linear-gradient(45deg, rgb(0, 0, 0) 95%,rgb(159, 169, 174) 99%, rgb(93, 93, 94) 100%);
+    background: rgb(224,215,219);
+    background: radial-gradient(circle, rgb(45, 68, 74) 0%, rgb(40, 40, 42) 30%); 
     padding: .1% 5%;
     margin: 0;
   
@@ -37,6 +35,10 @@ body {
 
   canvas, body{
     overflow-x: hidden;
+  }
+  
+  a{
+    text-decoration: none;
   }
   
 

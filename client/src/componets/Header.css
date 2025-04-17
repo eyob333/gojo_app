@@ -1,8 +1,10 @@
 #header{
+    position: relative;
     display: flex;;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
+    z-index: 1;
   }
   
 
@@ -14,7 +16,7 @@
   .nav-btn{
     display: flex;
     padding-right: 5px;
-    gap: 20px;
+    gap: 40px;
     /* width: 20%; */
   }
   
@@ -24,9 +26,10 @@
     border-radius: 0;
 
   }
-  .nav-item h4{
-    letter-spacing: .18rem;
-    font-weight: 300;
+  .nav-item p{
+    letter-spacing: .12rem;
+    font-size: .8rem;
+    font-weight: 600;
   }
   .search-icon{
     border: none;

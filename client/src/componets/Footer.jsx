@@ -1,4 +1,5 @@
 import './Footer.css'
+import { Link } from 'react-router-dom'
 
 function Footer(){
 
@@ -15,9 +16,9 @@ function Footer(){
                         <h5>Quick links</h5>
                     </div>
                     <div className='footer-links'>
-                        <p>Home</p>
-                        <p>Real e-states</p>                        
-                        <p>Top Pics</p>
+                        <Link to={''}> <p>Home</p> </Link>
+                        <Link to={'realestate'}> <p>Real e-states</p>  </Link>                     
+                        <Link to={'toppis'} > <p>Top Pics</p> </Link>
                     </div>
                 </div>
 
@@ -26,9 +27,9 @@ function Footer(){
                         <h5>Learn more</h5>
                     </div>
                     <div className='footer-links' >
-                        <p>About us</p>
-                        <p>Contact us</p>
-                        <p>Feedback</p>
+                        <Link to={'about'}> <p>About us</p> </Link>
+                        <Link to={'contact'}> <p>Contact us</p> </Link>
+                        <Link to={'feedback'}> <p>Feedback</p> </Link>
                     </div>
                 </div> 
 
@@ -37,8 +38,8 @@ function Footer(){
                         <h5>For developers</h5>
                     </div>
                     <div className='footer-links' >
-                        <p>API</p>                       
-                        <p>Git-hub</p>
+                        <Link to={'Api'}> <p>API</p>  </Link>                     
+                        <Link to={'https://github.com/eyob333'}> <p>Git-hub</p> </Link>
                     </div>
                 </div>
    

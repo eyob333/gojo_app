@@ -34,7 +34,7 @@ class ImageUploader{
 
         const results = await Promise.all(uploadPromises);
         const urls = results.map(result => result.secure_url);
-        console.log("foo2", results)
+        // console.log("foo2", results)
   
         return urls;
       } catch (error) {

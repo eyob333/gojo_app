@@ -2,3 +2,13 @@
     border-width: 0;
     width: 300px;
 }
+
+button.dbactive{
+    background-color: #6c6c6ce0;
+    border-width: 1px;
+    border-color: rgb(30, 23, 23);
+    padding: 2px 2px;    
+    padding-bottom: 5px;
+    border-style:groove;
+    border-radius: 5%;
+}

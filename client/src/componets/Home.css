@@ -2,45 +2,52 @@ main{
   height: 100vh;
 }
 #main {
-  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  width: 100%;
+  height: 100%;
+  background-image: url("./photo_2025-03-07_15-29-34.jpg"); 
+  background-color: #cccccc; 
+  height: 700px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
 }
 
   .main-heading{
-    /* width: 40%; */
+    text-align: center;
     margin: 0;
   }
-  #main h1 {    
-    font-family: 'eBuenaClassic', sans-serif;                                                                                                                                                                              
+  #main h1 {  
+    font-family: 'eBuenaClassic', sans-serif;  
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+                                                                                                                                                                                                                            
     font-weight: 100;
     color: #ffffff;
     font-size: 5.5rem;
     margin: 0;
-    padding-top:0;
+    padding-top:15%;
     letter-spacing: .2rem;
   }
   #main h2{
     font-family: 'Shapeingo', sans-serif;
     font-weight: 400;                                        
-    margin-top: 5%;
+    margin-top: 4%;
     padding-bottom: 1%;
-    font-size: 1.1rem;
-    color: #dee2e6;
+    font-size: 1rem;
+    color: #ffffff;
   }    
   
   main hr{
-    width: 80%;
-    color: #7C9A90;
-    margin-left: 0;
-    border-style: solid;
-    left: 0
-  }
-
-  canvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
+    width: 20%;
+    border-color: #6cc7e0;
+    /* margin-left: 0; */
+    border-style:outset;
+    border-top: 0;
+    /* left: 0 */
   }
 
   
@@ -54,14 +61,6 @@ main{
     padding-top: 5%;
     margin-bottom: 70px;
   }
-  /* #main{
-    width: 40%;
-  } */
-  /* .img{
-    padding-top: 1%;
-    height: 100%;
-    width: 50%;
-  } */
 
   img{
     height: 100%;
@@ -163,6 +162,118 @@ main{
     width: 80%;
   }
 
+  
+  .real-estate-section {
+    padding: 4rem 2rem;
+    /* background: #57768474; */
+    border-radius: 1%;
+  }
+  
+  .rel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .left, .right {
+    flex: 1 1 500px;
+  }
+  
+  .left h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    /* color: #1a1a1a; */
+    margin-bottom: 1rem;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    color: #efe1e1;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .stat-box {
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .stat-box.white {
+    background: #181515;
+    color: #ffffff;
+  }
+  
+  .stat-box.dark {
+    background: #1a1a1a;
+    color: #fffbfb;
+  }
+  
+  .stat-box h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .stat-box p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .right .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #e0d2d2;
+  }
+  
+  .image-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+  }
+  
+  .circle-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle-badge small {
+    font-size: 0.6rem;
+    font-weight: normal;
+    color: #777;
+  }
+  
+
   @media ( 576px <= width <= 768px){
   
     main{
@@ -222,20 +333,6 @@ main{
     margin-left: 0;
     border-style: solid;
     left: 0
-  }
-  #main button{
-    margin-top: 15%;
-  }
-  .img{
-    position: absolute;
-    top: 230px;
-    right: 0;
-    z-index: -1;
-    margin: 0;
-    border: 0;
-    padding-top: 5%;
-    width: 300px;
-    height: 300px; 
   }
   .intro-one{
     margin-top: 100%;

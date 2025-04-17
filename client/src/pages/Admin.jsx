@@ -1,5 +1,4 @@
 import { useState } from "react";
-import FileUpload from "../componets/admin/Upload";
 import axios from "axios";
 import AdminHome from "../componets/admin/AdminHome";
 import './pagesCss/admin.css'

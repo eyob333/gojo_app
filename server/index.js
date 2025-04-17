@@ -16,23 +16,38 @@ const db = new DataBase()
 const uploader = new ImageUploader()
 
 
-app.get('/admin/database', async(req, res) => {
+app.get('/admin/collection', async(req, res) => {
   try{
     const data = await db.findCollection();
     res.send(data);    
   } catch (err){
     res.send(err);
   }
+}) 
+
+app.post('/admin/database', async(req, res) => {
+  try{
+
+    console.log('something')
+    const schema = req.body.schema
+    const filter = req.body.filter
+    const data = await db.findDb(filter, schema)
+    console.log(data)
+    res.send(data);
+  } catch(err) {
+    console.log(err)
+    res.send(err)
+  }
 })
 
 app.post("/admin/database/upload", async (req, res) => {
-
   try{
-    const url = await uploader.upload_imgs( req, res)
+    const url = await uploader.upload_imgs( req, res) 
+
     const reqData = req.body.data
     const schema = req.body.schema
 
-    const data = reqData
+    let data = reqData
 
     if (schema === 'realestate'){
       data = {
@@ -40,7 +55,7 @@ app.post("/admin/database/upload", async (req, res) => {
         ...reqData
       }
     }
-    else if ( schema === 'properties'){
+    else if(schema === 'properties'){
       data = {
         image_urls: {
           main: url[0],
@@ -49,7 +64,6 @@ app.post("/admin/database/upload", async (req, res) => {
         ...reqData
       }
     }
-
     const database = await db.addData(data, schema)
     console.log(database)
     res.send("okay").status(200)
@@ -74,19 +88,37 @@ app.post('/admin', async(req, res) => {
 
 })
 
-app.get('/realestate', async(req, res) => {
-  const resposne = await db.findDb({}, "realestate", "id name icons" )
-  console.log(resposne)
-  res.send(resposne)
-})
+// app.get('/realestate', async(req, res) => {
+//   const resposne = await db.findDb({}, "realestate", "id name icons" )
+//   console.log(resposne)
+//   res.send(resposne)
+// })
 
 
 app.get('/realstate/properties', async(req, res) => {
   const filter = req.body.filter
   const schema = req.body.schema
+  const selection = req.body.selection
+  const condition  = req.body.condition
 
-  const response = await db.findDb(filter, schema)
+  const response = await db.findDb(filter, schema, selection, condition)
+  res.send(response)
 })
+
+
+app.post('/database/properties', async(req, res) =>{
+  const filter = req.body.filter
+  const schema = req.body.schema
+  const selection = req.body.selection
+  const condition  = req.body.condition
+
+  console.log(filter, selection, condition, schema)
+
+  const response = await db.findDb(filter, schema, selection, condition)
+  console.log(response)
+  res.send(response)
+})
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

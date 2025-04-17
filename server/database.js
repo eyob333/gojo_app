@@ -28,7 +28,10 @@ class DataBase{
             details: {type: String},
             location: {type: String},
             description: {type: String},
-            flag: {type: Boolean, default: false}
+            flag: {
+                type: {type: String, default: "delete"},
+                value:{type: Boolean, default: false}
+            }
         })
 
         this.schemaRS = Schema({
@@ -70,7 +73,7 @@ class DataBase{
 
     async addData(data, schema){
         try{
-            if(schema === 'admin'){
+            if(schema === 'admins'){
                 const response = await this.modelAD(data)
                 response.save()
                 return response
@@ -92,31 +95,44 @@ class DataBase{
         } catch(err){
             return err;
         }
-
     }
 
-    async findDb(filter = {}, schema){
+    async findDb(filter = {}, schema, selection = undefined, condition = undefined, quantity=2){
         try {
-            if (schema == 'admin'){
-                const response = await this.modelAD.findOne({...filter})
-                return response
+            if (schema == 'admins'){
+                if (quantity < 2){
+                    const response = await this.modelAD.findOne({...filter})
+                    return response
+                } else{
+                    const response = await this.modelAD.find({...filter})
+                    return response
+                }
             }
             else if (schema == 'properties'){
-                const data = await this.modelPR.find({...filter})
-                return data    
+                if(selection || condition){
+                    const data = await this.modelPR.find({...filter}).select(selection).where('price').lt(condition)
+                    console.log("crazy bruh")
+                    return data                    
+                }else{
+                    const data = await this.modelPR.find({...filter})
+                    return data
+                }
             }
-            else if (schema == 'realestate') {
+            else if (schema == 'realestates') {
+
                 const data = await this.modelRS.find({...filter}).select('name icons')
                 return data            
+            }
+            else if (schema == 'users'){
+                const data = await this.modelCL.find({...filter})
+                return data    
             }
             else{
                 return "error"
             }
-
         } catch (err){
             return err
         }
-
     }
     async findCollection(){
 
