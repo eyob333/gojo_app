@@ -11,12 +11,15 @@ function Realestate(){
     const [isLoading, setIsLoding] = useState(false)
     const [error, setError] = useState(undefined);
 
+    function handleClick(){
+        console.log("hi")
+    }
+
     useEffect( () => {
         async function fetch(){
             setIsLoding(true)
             try {
-                const response = await axios.get("http://localhost:1424/realestate");
-
+                const response = await axios.post("http://localhost:1424/database/realestate",{filter: {}, selection: "id name icons", quantity: 2});
                 console.log(response);             
                 setData(response.data)
                 setIsLoding(false)
@@ -24,7 +27,6 @@ function Realestate(){
                 console.error(err);
                 setError(err)
                 setTimeout( () => setIsLoding(false), 4000)
-
             }
         }
         fetch()
@@ -41,7 +43,7 @@ function Realestate(){
                 <div className="realestae-body">
 
                 { isLoading? <div className="err-load" > <Loader /></div>: data.map( d => {
-                        return <List key={d._id} id={d._id} name={d.name} icon={d.icons} />
+                        return <List key={d._id} id={d._id} name={d.name} icon={d.icons} onClick={handleClick} />
                 })}
                 </div>
             </div>

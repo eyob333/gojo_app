@@ -154,7 +154,7 @@ function Home(){
                 We have witnessed the ever-evolving landscape of the real estate market and become a trusted partner by thousands of clients.
               </p>
               <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Modern Home"/>
+                <img src="/photo34.jpg" alt="Modern Home"/>
                 <div class="circle-badge">
                   <span>↗</span> <br/>
                   <small>Contact Us</small>

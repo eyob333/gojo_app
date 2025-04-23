@@ -114,21 +114,33 @@ class DataBase{
                     console.log("crazy bruh")
                     return data                    
                 }else{
-                    const data = await this.modelPR.find({...filter})
-                    return data
+                    if (quantity > 1 || quantity === undefined){
+                        const data = await this.modelPR.find({...filter})
+                        return data                        
+                    } else if(quantity < 2){
+                        const data = await this.modelPR.findOne({...filter}).select('-flag')
+                        console.log("whasupaass")
+                        return data 
+                    }
+    
                 }
             }
             else if (schema == 'realestates') {
-
-                const data = await this.modelRS.find({...filter}).select('name icons')
-                return data            
+                if (quantity > 1){
+                    const data = await this.modelRS.find({...filter}).select(selection)
+                    return data  
+                } else{
+                    const data = await this.modelRS.findOne({...filter}).select(selection)
+                    return data  
+                }
+                          
             }
             else if (schema == 'users'){
                 const data = await this.modelCL.find({...filter})
                 return data    
             }
             else{
-                return "error"
+                return "error! invalid token"
             }
         } catch (err){
             return err

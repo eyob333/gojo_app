@@ -21,7 +21,7 @@ function Properties(){
                 "features.type": data.type,
                 price_type: '/sq (m)'
             }   
-            const selection = "image_urls.main _id description location price price_type features.type"
+            const selection = "image_urls.main _id description location price price_type features.type _id"
             const condition = priceVal
             const response = await axios.post("http://localhost:1424/database/properties", {schema: "properties", filter, selection, condition});
             console.log("Upload successful: ", response.data);
@@ -69,11 +69,19 @@ function Properties(){
                         </div>
                         <div className="search-item">
                             <span className="label">Type</span>
-                            <input type="text" name="type" className="value" placeholder="Minimalism" onChange={handeleDataChange} /> 
+                            <select name="type" className="value"  onChange={handeleDataChange}>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Condo">Condo</option>
+                                    <option value="Villa">Villa</option>
+                                    <option value="Single-family_home">Single-family home</option>
+                                </select>
                         </div>
                         <div className="search-item">
                             <span className="label">Price Type</span>
-                            <input type="checkbox" name="price_type" className="value" placeholder="/sq(m)" onChange={handeleDataChange} /> 
+                            <select name="price_type" className="value" onChange={handeleDataChange}> 
+                                <option value="Fixed">Fixed</option>
+                                <option value="Sqmt">Sqmt</option>
+                            </select>
                         </div>
                         <button className="search-button" onClick={handleSubmit}>
                             <svg className="svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px"><path fill ="#000000"  d="M 13 3 C 7.4886661 3 3 7.4886661 3 13 C 3 18.511334 7.4886661 23 13 23 C 15.396652 23 17.59741 22.148942 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148942 17.59741 23 15.396652 23 13 C 23 7.4886661 18.511334 3 13 3 z M 13 5 C 17.430666 5 21 8.5693339 21 13 C 21 17.430666 17.430666 21 13 21 C 8.5693339 21 5 17.430666 5 13 C 5 8.5693339 8.5693339 5 13 5 z"/></svg>
@@ -92,7 +100,7 @@ function Properties(){
             {loading && <Loader />}
             {error && <Error />}
             {resD && resD.map( d => {
-                return <ShowCard key={d._id} name={d.features.type} price={d.price} description={d.description} details={d.description} type={d.price_type} img={d.image_urls.main} />
+                return <ShowCard key={d._id} _id={d._id} name={d.features.type} price={d.price} description={d.description} details={d.description} type={d.price_type} img={d.image_urls.main} />
             })}
         </div>
         </section>

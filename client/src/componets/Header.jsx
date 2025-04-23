@@ -5,9 +5,11 @@ function Header(){
     
     return <header id="header">
                 <div>
-                    <div id='header-logo' className='logo'>
-                        <img src="/gojo1.png" alt="" />
-                    </div>
+                    <Link to={'./'} > 
+                        <div id='header-logo' className='logo'>
+                            <img src="/gojo1.png" alt="" />
+                        </div>
+                    </Link>
             </div>
             <div className="nav-btn">
                 <button className='nav-item'><Link to={'realestate'}> <p>RealEstates</p> </Link></button>

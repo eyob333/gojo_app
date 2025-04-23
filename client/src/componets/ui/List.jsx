@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom"
 
 function List({id, icon, name}){
 
     return (
-        <div className="listitems">
-            <img src={icon} alt="" />
-            <h3>{name}</h3>
-            <p>{id}</p>
-            
-        </div>
+        <Link to={name} >
+            <div className="listitems">
+                <img src={icon} alt="Real e-state logo" />
+                <h3>{name}</h3>
+                <p>{id}</p>
+            </div>
+        </Link>
     )
 }
 

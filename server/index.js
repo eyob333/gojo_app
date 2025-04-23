@@ -88,11 +88,14 @@ app.post('/admin', async(req, res) => {
 
 })
 
-// app.get('/realestate', async(req, res) => {
-//   const resposne = await db.findDb({}, "realestate", "id name icons" )
-//   console.log(resposne)
-//   res.send(resposne)
-// })
+app.post('/database/realestate', async(req, res) => {
+  const selection = req.body.selection
+  const filter = req.body.filter
+  const quantity = req.body.quantity
+  const resposne = await db.findDb(filter, "realestates", selection, undefined, quantity)
+  console.log(resposne)
+  res.send(resposne)
+})
 
 
 app.get('/realstate/properties', async(req, res) => {
@@ -111,10 +114,11 @@ app.post('/database/properties', async(req, res) =>{
   const schema = req.body.schema
   const selection = req.body.selection
   const condition  = req.body.condition
+  const quantity = req.body.quantity
 
-  console.log(filter, selection, condition, schema)
+  console.log(filter, selection, condition, schema,)
 
-  const response = await db.findDb(filter, schema, selection, condition)
+  const response = await db.findDb(filter, schema, selection, condition, quantity)
   console.log(response)
   res.send(response)
 })

@@ -8,6 +8,9 @@ import Error from './componets/dynamics/Error'
 import NotAvaliable from './componets/dynamics/NotAvaliable'
 import Properties from './pages/Properties'
 import PropertyProfile from './componets/properties/PropertyProfile'
+import { realestateFetch } from './componets/realEstate/Profile'
+import { sendRequest } from './componets/properties/PropertyProfile'
+import HydrateFallback from './componets/dynamics/HydrateFallback'
 
 
 const route = createBrowserRouter([{
@@ -18,11 +21,11 @@ const route = createBrowserRouter([{
         {path: '', index: true, element:<Home />,},
         {path: 'realestate', children: [
             {path: '', index: true, element: <Realestate />},
-            {path: ':name', element: <Profile />},
+            {path: ':name', id:'realestate', loader: realestateFetch ,element: <Profile />},
         ]},
         {path: 'properties', children: [
             {path: '', index: true,element: <Properties />},
-            {path: ':id', element: <PropertyProfile />}
+            {path: ':id', id: 'id', loader: sendRequest, hydrateFallbackElement: <HydrateFallback />, element: <PropertyProfile />}
         ]},
         {path: 'admin', element: <AdminLogin />},
         {path: 'contact', element: <NotAvaliable />},
