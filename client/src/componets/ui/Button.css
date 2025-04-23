@@ -12,3 +12,11 @@ button.dbactive{
     border-style:groove;
     border-radius: 5%;
 }
+
+button.properties-deal-btn{
+    height: 80px;
+    background-color: #76f8b7;
+    font-size: 1rem;
+    border-width: 0;
+    color: #322d2de0;
+}

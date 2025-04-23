@@ -208,13 +208,21 @@ main{
   }
   
   .stat-box.white {
-    background: #181515;
+    background: #292323;
     color: #ffffff;
+  }
+
+  .stat-box svg{
+    width: 40px;
   }
   
   .stat-box.dark {
-    background: #1a1a1a;
-    color: #fffbfb;
+    background: #ffffff;
+    color: #060505;
+  }
+
+  .stat-box.dark p{
+    color: #060505;
   }
   
   .stat-box h3 {
@@ -223,7 +231,8 @@ main{
   }
   
   .stat-box p {
-    margin-top: 0.5rem;
+    margin-top: 0;
+    border-top: 0;
     font-size: 0.9rem;
   }
   
@@ -309,9 +318,6 @@ main{
 
   
 @media ( width <= 576px) {
-  /* *{
-    overflow-x:hidden;
-  } */
 
   main{
     display: grid;

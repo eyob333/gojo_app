@@ -1,6 +1,7 @@
 
 #properties{
   margin-top: 20px;
+  padding: 2%;
 }
 
 .properties-image{
@@ -37,7 +38,8 @@
 }
 .properties-details-detail{
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 55% 35%;
+  padding: 10%;
 }
 
 .properties-detail-items{
@@ -96,4 +98,34 @@
 .properties-locaton img{
   width: 450px;
   height: 450px;
+}
+
+.properties-deal{
+  margin-top: 30%;
+
+}
+.properties-deal button{
+  margin-top: 20px;
+  cursor:pointer
+}
+
+
+@media ( width <= 576px) {
+  #properties{
+    margin: 0;
+    padding-top: 0;
+  }
+  .properties-image{
+    grid-template-columns: 100%;
+    margin: 0;
+    grid-template-rows: 50vh;
+    padding: 0;
+    gap: 30px;
+  }
+
+  .properties-detail-grid{
+    margin: 0;
+    grid-template-columns: 100%;
+  }
+
 }

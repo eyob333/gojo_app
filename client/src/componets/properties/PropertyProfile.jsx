@@ -1,25 +1,33 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useRouteLoaderData } from "react-router-dom"
+import { Link } from "react-router-dom"
+import Modal from "../ui/Modal"
+import Button from "../ui/Button"
 import "./PropertyProfile.css"
 
 
 function PropertyProfile(){
     const data = useRouteLoaderData("id")
-    console.log(data)
+    console.log("foo yoo",data)
+
+    function handleModal(){
+      <Modal open={true} />
+      console.log("some thing")
+    }
 
     return <>
     <div id="properties">
       <div className="properties-image">
         <div className="properties-image-items1">
-          <img src="/inBuild.jpg" alt="" />
+          <a href="/inBuild.jpg"> <img src="/inBuild.jpg" alt="" /></a>
         </div>
 
         <div className="properties-image-items">
-                <img src="/inBuild.jpg" alt="" />
-                <img src="/inBuild.jpg" alt="" />
-                <img src="/inBuild.jpg" alt="" />
-                <img src="/inBuild.jpg" alt="" />
+              <a href={'/inBuild.jpg'}> <img src="/inBuild.jpg" alt="" /> </a>  
+              <a href={'/inBuild.jpg'}> <img src="/inBuild.jpg" alt="" /> </a> 
+              <a href={'/inBuild.jpg'}> <img src="/inBuild.jpg" alt="" /> </a>  
+              <a href={'/inBuild.jpg'}> <img src="/inBuild.jpg" alt="" /> </a> 
         </div>
       </div>
       <div className="properties-detail-grid">
@@ -104,8 +112,8 @@ function PropertyProfile(){
 
         </div>
         <div className="properties-deal">
-                <button>some</button>
-                <button>some</button>
+                <Button className="properties-deal-btn">Request a Tour</Button>
+                <Button className="properties-deal-btn">Call Us</Button>
           </div>
       </div>
 
@@ -117,7 +125,6 @@ async function sendRequest({request, params}){
     try{ 
         const response = await axios.post("http://localhost:1424/database/properties", {schema: "properties", filter: {_id: params.id}, selection: undefined, condition: undefined, quantity:1});
         console.log(response.data);
-        console.log("whasuppp", response)
         return response.data
     }
     catch (err){
