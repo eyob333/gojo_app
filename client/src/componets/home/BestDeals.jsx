@@ -20,8 +20,8 @@ function Deals({ heading, filter}){
                 const URL = import.meta.env.VITE_SERVER_URL;
                 const selection = "image_urls.main _id description location price price_type features.type";
                 const response = await axios.post( URL + "database/properties", {schema: "properties", filter, selection});
-                console.log("foo", response)
-                setData(response.data)
+                setData(response.data)       
+                console.log("foo", response.data)
                 setIsLoding(false)
             } catch (err) {                
                 console.error("axios error",err);
@@ -38,9 +38,8 @@ function Deals({ heading, filter}){
             <h2>{heading}</h2>
             { error && <Error />}
             { isLoading && <Loader />}
-            { (data.length == 0 || data == {}) && !isLoading && !error && <p style={{padding: "10%"}}>Mmm. looks like there is no data.</p>}
-            {console.log(data)}
-            {data && (data.length !== 0 || data == {})  && <div className="show-items"> 
+            { (data.length == 0 || data.length == undefined)  && !isLoading && !error && <p style={{padding: "10%"}}>Mmm. looks like there is no data.</p>}
+            {data && data.length && <div className="show-items"> 
                 {data.map( (d) => {
                     return <ShowCard 
                         key={d.name} 

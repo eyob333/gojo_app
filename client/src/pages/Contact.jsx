@@ -1,5 +1,5 @@
 import "./pagesCss/contact.css"; // Assuming you have a CSS file for styling
-import ContactUsImage from "../assets/nonv.webp"; // Import the image
+import ContactUsImage from "/images/nonv.webp"; // Import the image
 
  function Contact() {
    return (

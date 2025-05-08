@@ -87,7 +87,7 @@ function Profile(){
         </>
 }
 
-async function realestateFetch({request, params}){
+export const realestateFetch = async ({ params }) => {
     try{
         const URL = import.meta.env.VITE_SERVER_URL;
         const response = await axios.post(URL + "database/realestate",{filter: {name: params.name },selection: "", quantity: 1})         
@@ -101,4 +101,3 @@ async function realestateFetch({request, params}){
 }
 
 export default Profile
-export {realestateFetch}

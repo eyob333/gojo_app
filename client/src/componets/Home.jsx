@@ -163,7 +163,7 @@ function Home(){
                 We have witnessed the ever-evolving landscape of the real estate market and become a trusted partner by thousands of clients.
               </p>
               <div className="image-box">
-                <img src="/photo34.webp" alt="Modern Home"/>
+                <img src="/images/photo34.webp" alt="Modern Home"/>
                 <Link to={'contact'}>
                   <div className="circle-badge">
                     <span>↗</span> <br/>

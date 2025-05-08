@@ -38,7 +38,7 @@ function Header(){
                 <div>
                     <Link to={'./'}  > 
                         <div id='header-logo' className='logo'>
-                            <img width="90px" height="90px" src="/gojo1.webp" alt="gojo homes logo" />
+                            <img width="90px" height="90px" src="/images/gojo1.webp" alt="gojo homes logo" />
                         </div>
                     </Link>
             </div>

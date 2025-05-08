@@ -8,7 +8,7 @@ function Footer(){
             <div className='footer-logo'>
                 <Link to={"./"}>
                     <div id='footer-logo'  className="logo">
-                        <img src="/gojo1.webp" alt="gojo homes logo" />
+                        <img src="images/gojo1.webp" alt="gojo homes logo" />
                     </div>
                 </Link>
                 

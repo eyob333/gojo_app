@@ -8,7 +8,7 @@ main{
   width: 100vw;
   width: 100%;
   height: 100%;
-  background-image: url("./photo_2025-03-07_15-29-34.webp"); 
+  background-image: url("/images/photo_2025-03-07_15-29-34.webp"); 
   background-color: rgba(255, 249, 249, 0.251); 
   height: 700px; /* You must set a specified height */
   background-position: center; /* Center the image */
@@ -264,7 +264,7 @@ main{
   @media ( 576px <= width <= 768px){
 
     #main {
-      background-image: url("./forScreenMed.webp"); 
+      background-image: url("/images/forScreenMed.webp"); 
     }
     .main-heading{
       padding-top: 100px;
@@ -276,7 +276,7 @@ main{
 @media ( width <= 576px) {
 
   #main {
-    background-image: url("./forScreenSmall.webp"); 
+    background-image: url("/images/forScreenSmall.webp"); 
   }
   .main-heading{
     padding-top: 100px;
@@ -285,6 +285,4 @@ main{
     margin-top: 0;
     font-size: 2rem;
   }
-
-  
 }

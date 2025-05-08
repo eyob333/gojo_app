@@ -26,10 +26,10 @@ function PropertyProfile(){
         </div>
 
         <div className="properties-.image-items">
-              <a href={"/" + data.image_urls.all[0]} > <img src={data.image_urls.all[0]} alt="" /> </a>  
-              <a href={"/" + data.image_urls.all[1]} > <img src={data.image_urls.all[1]} alt="" /> </a> 
-              <a href={"/" + data.image_urls.all[2]} > <img src={data.image_urls.all[2]} /> </a>  
-              <a href={"/" + data.image_urls.all[3]} > <img src={data.image_urls.all[3]} /> </a> 
+              <a href={data.image_urls.all[0]} > <img src={data.image_urls.all[0]} alt="realestate property image" /> </a>  
+              <a href={data.image_urls.all[1]} > <img src={data.image_urls.all[1]} alt="realestate property image" /> </a> 
+              <a href={data.image_urls.all[2]} > <img src={data.image_urls.all[2]} alt="realestate property image"/> </a>  
+              <a href={data.image_urls.all[3]} > <img src={data.image_urls.all[3]} alt="realestate property image" /> </a> 
         </div>
       </div>
       <div className="properties-detail-grid">
@@ -123,7 +123,7 @@ function PropertyProfile(){
     </>
 }
 
-async function sendRequest({request, params}){
+export const sendRequest = async({params}) => {
     try{ 
         const URL = import.meta.env.VITE_SERVER_URL;
         const response = await axios.post( URL + "database/properties", {schema: "properties", filter: {_id: params.id}, selection: undefined, condition: undefined, quantity:1});
@@ -136,5 +136,4 @@ async function sendRequest({request, params}){
 }
 
 export default PropertyProfile
-export {sendRequest}
 

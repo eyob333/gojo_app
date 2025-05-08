@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Button from "../ui/Button"
 import './AdminHome.css'
-import NotAvaliable from "../dynamics/NotAvaliable"
+import NotAvaliable from "../dynamics/NotAvailable"
 import Database from "./Database"
 
 function AdminHome({admin = 'admin'}){

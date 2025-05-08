@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './dynamics-styles/NotAvalible.css'
 
-function NotAvaliable(){
+function NotAvailable(){
 
     return  <>
         <div className="gear-container">
@@ -27,4 +27,4 @@ function NotAvaliable(){
     </>
 }
 
-export default NotAvaliable
+export default NotAvailable
