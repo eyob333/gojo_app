@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Button from "../ui/button"
+import Button from "../ui/Button"
 import './AdminHome.css'
 import NotAvaliable from "../dynamics/NotAvaliable"
 import Database from "./Database"
