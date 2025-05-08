@@ -3,7 +3,7 @@ import Root from './pages/Root'
 import Home from "./componets/Home"
 import Profile from "./componets/realEstate/Profile"
 import Realestate from './pages/Realestate'
-import AdminLogin from './pages/admin'
+import AdminLogin from './pages/Admin'
 import Error from './componets/dynamics/Error'
 import NotAvaliable from './componets/dynamics/NotAvaliable'
 import Properties from './pages/Properties'
