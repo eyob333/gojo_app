@@ -1,0 +1,72 @@
+.contact-us-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #1e272e00;
+    color: #fff;
+    font-family: sans-serif; /* Added a default font */
+   }
+  
+   .image-container {
+    flex: 1;
+    max-width: 50%;
+   }
+  
+   .image-container img {
+    width: 60%;
+    margin-right: 2%;
+    display: block;
+    border-radius: 8px; /* Added a subtle image border radius */
+   }
+  
+   .content-container {
+    flex: 1;
+    max-width: 45%;
+    padding-left: 40px;
+   }
+  
+   .contact-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: lightgreen; /* Changed heading color */
+   }
+  
+   .contact-info p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+   }
+  
+   .call-to-action button {
+    background-color: lightgreen;
+    color: #1e272e;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   }
+  
+   .call-to-action button:hover {
+    background-color: #9aff81;
+   }
+  
+   /* Responsive Design - Adjustments for smaller screens */
+   @media (max-width: 768px) {
+    .contact-us-container {
+    flex-direction: column; /* Stack image and content vertically */
+    text-align: center; /* Center text on smaller screens */
+    }
+  
+    .image-container {
+    max-width: 80%; /* Allow image to take more width on smaller screens */
+    margin-bottom: 20px; /* Add spacing between image and content */
+    }
+  
+    .content-container {
+    max-width: 80%; /* Allow content to take more width */
+    padding-left: 0; /* Remove left padding */
+    }
+   }

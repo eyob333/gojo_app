@@ -1,0 +1,23 @@
+.show-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.show-items.nogrid{
+  grid-template-columns: 100%;
+}
+@media ( 700px <= width <= 1000px){
+    .show-items{
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+@media ( width <= 700px) {
+  .show-items{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+  

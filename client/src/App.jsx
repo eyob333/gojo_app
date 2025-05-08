@@ -11,11 +11,14 @@ import PropertyProfile from './componets/properties/PropertyProfile'
 import { realestateFetch } from './componets/realEstate/Profile'
 import { sendRequest } from './componets/properties/PropertyProfile'
 import HydrateFallback from './componets/dynamics/HydrateFallback'
+import Contact from './pages/Contact'
+import AboutUs from './pages/AboutUs'
 
 
 const route = createBrowserRouter([{
     path: '',
     element: <Root/>,
+    hydrateFallbackElement: <HydrateFallback />,
     errorElement: <Error />,
     children: [
         {path: '', index: true, element:<Home />,},
@@ -25,13 +28,15 @@ const route = createBrowserRouter([{
         ]},
         {path: 'properties', children: [
             {path: '', index: true,element: <Properties />},
-            {path: ':id', id: 'id', loader: sendRequest, hydrateFallbackElement: <HydrateFallback />, element: <PropertyProfile />}
+            {path: ':id', id: 'id', loader: sendRequest, element: <PropertyProfile />}
         ]},
         {path: 'admin', element: <AdminLogin />},
-        {path: 'contact', element: <NotAvaliable />},
+        {path: 'contact', element: <Contact />},
         {path: 'help', element: <NotAvaliable />},
-        {path: 'about', element: <NotAvaliable />},
-        {path: 'api', element: <NotAvaliable />}
+        {path: 'about', element: <AboutUs />},
+        {path: 'api', element: <NotAvaliable />},
+        {path: 'feedback', element: <HydrateFallback />},
+        {path: 'announcement', element: <HydrateFallback />}
     ]
 }])
 

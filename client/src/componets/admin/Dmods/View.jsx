@@ -14,7 +14,8 @@ function View({collection}){
     const fetchData = async () => {
       try {
             setLoading(true)
-            const response = await axios.post("http://localhost:1424/admin/database", {schema: collection, filter: {}});
+            const URL = import.meta.env.VITE_SERVER_URL;
+            const response = await axios.post( URL + "admin/database", {schema: collection, filter: {}});
             setData(response.data); // Set the response data
       } catch (err) {
             setError(err); // Set the error if something goes wrong

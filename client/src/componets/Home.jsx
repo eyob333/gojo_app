@@ -1,10 +1,9 @@
-import BestDeals from './home/BestDeals'
+import Deals from './home/BestDeals'
 import './Home.css'
-
+import { Link } from 'react-router-dom'
 
 
 function Home(){
-
 
     return <>
         <main> 
@@ -15,21 +14,31 @@ function Home(){
                 </div>
                 <hr/>
             </div>
+            <div id="main-cover"></div>
         </main>
 
-        <section class="real-estate-section">
-          <div class="rel-container">
-            <div class="left">
+        <section className="real-estate-section">
+          <div className="rel-container">
+            <div className="left">
               <h2>We brought every real <br />Estae in one place</h2>
-              <p class="intro-text">
-                A cutting-edge real estate agent that offers a seamless and immersive experience for finding your dream home in the heart of the city
-              </p>
-              <div class="stats-grid">
-                <div class="stat-box white">
-                  <h3> <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M23 12C23 12.3545 22.9832 12.7051 22.9504 13.051C22.3838 12.4841 21.7204 12.014 20.9871 11.6675C20.8122 6.85477 16.8555 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12C3.00683 16.8555 6.85477 20.8122 11.6675 20.9871C12.014 21.7204 12.4841 22.3838 13.051 22.9504C12.7051 22.9832 12.3545 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12Z" fill="#ffffff"></path> <path d="M13 11.8812L13.8426 12.3677C13.2847 12.7802 12.7902 13.2737 12.3766 13.8307L11.5174 13.3346C11.3437 13.2343 11.2115 13.0898 11.1267 12.9235C11 12.7274 11 12.4667 11 12.4667V6C11 5.44771 11.4477 5 12 5C12.5523 5 13 5.44772 13 6V11.8812Z" fill="#ffffff"></path> <path d="M15.2929 17.7071C15.6834 17.3166 16.3166 17.3166 16.7071 17.7071L17.3482 18.3482L19.2473 16.4491C19.6379 16.0586 20.271 16.0586 20.6615 16.4491C21.0521 16.8397 21.0521 17.4728 20.6615 17.8634L18.1213 20.4036C18.0349 20.49 17.9367 20.5573 17.8318 20.6054C17.4488 20.8294 16.9487 20.7772 16.6203 20.4487L15.2929 19.1213C14.9024 18.7308 14.9024 18.0976 15.2929 17.7071Z" fill="#ffffff"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18 24C21.3137 24 24 21.3137 24 18C24 14.6863 21.3137 12 18 12C14.6863 12 12 14.6863 12 18C12 21.3137 14.6863 24 18 24ZM18 22.0181C15.7809 22.0181 13.9819 20.2191 13.9819 18C13.9819 15.7809 15.7809 13.9819 18 13.9819C20.2191 13.9819 22.0181 15.7809 22.0181 18C22.0181 20.2191 20.2191 22.0181 18 22.0181Z" fill="#ffffff"></path> </g></svg></h3>
+              <p className="intro-text">
+              Discover a revolutionary real estate platform that unifies every listing into one seamless experience. We make it easier than ever to find your dream home in the heart of the city—no more hopping between sites or agents. Everything you need, all in one place.              </p>
+              <div className="stats-grid">
+                <div className="stat-box white">
+                  <h3> <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" strokeWidth="0.00024000000000000003">
+                          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier"> 
+                            <path d="M23 12C23 12.3545 22.9832 12.7051 22.9504 13.051C22.3838 12.4841 21.7204 12.014 20.9871 11.6675C20.8122 6.85477 16.8555 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12C3.00683 16.8555 6.85477 20.8122 11.6675 20.9871C12.014 21.7204 12.4841 22.3838 13.051 22.9504C12.7051 22.9832 12.3545 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12Z" fill="#0f0f0f"></path> 
+                            <path d="M13 11.8812L13.8426 12.3677C13.2847 12.7802 12.7902 13.2737 12.3766 13.8307L11.5174 13.3346C11.3437 13.2343 11.2115 13.0898 11.1267 12.9235C11 12.7274 11 12.4667 11 12.4667V6C11 5.44771 11.4477 5 12 5C12.5523 5 13 5.44772 13 6V11.8812Z" fill="#0f0f0f"></path> 
+                            <path d="M15.2929 17.7071C15.6834 17.3166 16.3166 17.3166 16.7071 17.7071L17.3482 18.3482L19.2473 16.4491C19.6379 16.0586 20.271 16.0586 20.6615 16.4491C21.0521 16.8397 21.0521 17.4728 20.6615 17.8634L18.1213 20.4036C18.0349 20.49 17.9367 20.5573 17.8318 20.6054C17.4488 20.8294 16.9487 20.7772 16.6203 20.4487L15.2929 19.1213C14.9024 18.7308 14.9024 18.0976 15.2929 17.7071Z" fill="#0f0f0f"></path> 
+                            <path fillRule="evenodd" clipRule="evenodd" d="M18 24C21.3137 24 24 21.3137 24 18C24 14.6863 21.3137 12 18 12C14.6863 12 12 14.6863 12 18C12 21.3137 14.6863 24 18 24ZM18 22.0181C15.7809 22.0181 13.9819 20.2191 13.9819 18C13.9819 15.7809 15.7809 13.9819 18 13.9819C20.2191 13.9819 22.0181 15.7809 22.0181 18C22.0181 20.2191 20.2191 22.0181 18 22.0181Z" fill="#0f0f0f"></path> 
+                          </g>
+                        </svg>
+                    </h3>
                   <p>Save Time And Energy</p>
                 </div>
-                <div class="stat-box dark">
+                <div className="stat-box dark">
                   <h3>
                     <svg
                         viewBox="0 0 16 16"
@@ -39,7 +48,7 @@ function Home(){
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
-                          <g fill="#060505" strokeWidth="0.00016" color="#0f0f0f">
+                          <g fill="#fff" strokeWidth="0.00016" color="#fff">
                             <path
                               d="M8.04 10.471 2.938 7.953l2.085-1.03-.932-.46-3.017 1.49L8.04 11.39l6.965-3.437-3.017-1.49-.93.46 2.084 1.03z"
                               style={{ InkscapeStroke: 'none' }}
@@ -61,7 +70,7 @@ function Home(){
                   </h3>
                   <p>Every RealEstate In One Place</p>
                 </div>
-                <div class="stat-box white">
+                <div className="stat-box white">
                   <h3>
                     <svg
                       version="1.1"
@@ -77,7 +86,7 @@ function Home(){
                       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                       <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                       <g id="SVGRepo_iconCarrier">
-                        <style type="text/css">{`.st0{fill:#ffffff;}`}</style>
+                        <style type="text/css">{`.st0{fill:#0f0f0f;}`}</style>
                         <g>
                           <polygon
                             className="st0"
@@ -130,7 +139,7 @@ function Home(){
                   </h3>
                   <p>Save Money</p>
                 </div>
-                <div class="stat-box white">
+                <div className="stat-box white">
                   <h3>
                     <svg
                       viewBox="0 0 16 16"
@@ -139,26 +148,28 @@ function Home(){
                       stroke="#e5dcdc"
                       strokeWidth="0.096"
                     >
-                      <path d="M7 1H1V5H7V1Z" fill="#ffffff" />
-                      <path d="M7 7H1V15H7V7Z" fill="#ffffff" />
-                      <path d="M9 1H15V9H9V1Z" fill="#ffffff" />
-                      <path d="M15 11H9V15H15V11Z" fill="#ffffff" />
+                      <path d="M7 1H1V5H7V1Z" fill="#0f0f0f" />
+                      <path d="M7 7H1V15H7V7Z" fill="#0f0f0f" />
+                      <path d="M9 1H15V9H9V1Z" fill="#0f0f0f" />
+                      <path d="M15 11H9V15H15V11Z" fill="#0f0f0f" />
                     </svg>
                   </h3>
                   <p>Property Collections</p>
                 </div>
               </div>
             </div>
-            <div class="right">
-              <p class="description">
+            <div className="right">
+              <p className="description">
                 We have witnessed the ever-evolving landscape of the real estate market and become a trusted partner by thousands of clients.
               </p>
-              <div class="image-box">
-                <img src="/photo34.jpg" alt="Modern Home"/>
-                <div class="circle-badge">
-                  <span>↗</span> <br/>
-                  <small>Contact Us</small>
-                </div>
+              <div className="image-box">
+                <img src="/photo34.webp" alt="Modern Home"/>
+                <Link to={'contact'}>
+                  <div className="circle-badge">
+                    <span>↗</span> <br/>
+                    <small>Contact Us</small>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -166,13 +177,13 @@ function Home(){
 
             
         <section id="shows">
-            <BestDeals 
-              heading={"best offers"} 
-              details={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"}
+            <Deals 
+              heading={"Best Deals"}
+              filter={"best_deal"}
             />
-            <BestDeals
-              heading={"Top real estates"}
-              details={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"}
+            <Deals
+              heading={"Top Properties"}
+              filter={"top_properties"}
             />
         </section>
             

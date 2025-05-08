@@ -1,8 +1,9 @@
 .database{
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     gap: 20px;
+    max-height:max-content;
+
 }
 .databae-headers{
     display: grid; 
@@ -27,4 +28,5 @@
 .database-mod{
     padding: 0;
     margin: 0;
+    max-height:max-content;
 }

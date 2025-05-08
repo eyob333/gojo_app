@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react"
-import axios from "axios"
-import { useRouteLoaderData } from "react-router"
-import { realestate} from "../../assets/data"
-import Loader from "../dynamics/Loader"
-import Error from "../dynamics/Error"
-import ShowCard from "../ui/ShowCard"
-import "./Profile.css"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link, useRouteLoaderData} from "react-router";
+import Loader from "../dynamics/Loader";
+import Error from "../dynamics/Error";
+import ShowCard from "../ui/ShowCard";
+import "./Profile.css";
+
 
 function Profile(){
-    const [da, setData] = useState([])
-    const [isLoading, setIsLoding] = useState(false)
+    const [da, setData] = useState([]);
+    const [isLoading, setIsLoding] = useState(false);
     const [error, setError] = useState(undefined);
-    const roData = useRouteLoaderData('realestate')
+    const roData = useRouteLoaderData('realestate');
 
 
     useEffect( () => {
@@ -21,9 +21,10 @@ function Profile(){
 
                 const filter = {
                         realestate: roData.name,
-                    }   
+                    }
+                const URL = import.meta.env.VITE_SERVER_URL;
                 const selection = "image_urls.main _id description location price price_type features.type"
-                const response = await axios.post("http://localhost:1424/database/properties", {schema: "properties", filter, selection});
+                const response = await axios.post( URL + "database/properties", {schema: "properties", filter, selection});
                 setData(response.data)
                 setIsLoding(false)
             } catch (err) {                
@@ -35,7 +36,6 @@ function Profile(){
         fetch()
     }, [fetch])
     
-    const data = realestate[0]
     return <>
             <div className="realestate-profile">
                 <div className="heading-profile">
@@ -52,6 +52,7 @@ function Profile(){
                         <p>Site  {roData.project.site}</p>
                         <p>Rating  {roData.rating}</p>
                         <p>Website {roData.website}</p>
+                        <p>Head Office {roData.headOffice}</p>
                     </ul>
                 </div>
 
@@ -60,15 +61,25 @@ function Profile(){
                                             message="Check your network"
                                          /> 
                                         : <div className="profile-properties">
-                    <div className= { isLoading? `properites isloading`: `properites`} >
-                        {isLoading? <Loader /> : da.map( d => {
-                                return <ShowCard
+                    <div className= { isLoading || da.length == 0? `properites isloading`: `properites`} >
+                        {da.length == 0 && <>
+                            <p  style={{textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
+                            <Link to={".."}><p style={{textAlign: "center", color: "lightgreen"}}>Go Back</p></Link>
+                         </>}
+                        {isLoading ? <Loader /> : da.map( d => {
+                                if( console.log(d)){
+                                    return <>looks like there is no properties for this realestate</>
+                                } else{
+                                    return <ShowCard
                                             key={d._id} 
                                             name={d.name} 
                                             type={d.type}
                                             details={d.details}
                                             description={d.description}
-                                            />
+                                            path={"properties"}
+                                        />
+                                }
+                                
                             })}
                     </div>
                 </div>}
@@ -78,7 +89,8 @@ function Profile(){
 
 async function realestateFetch({request, params}){
     try{
-        const response = await axios.post("http://localhost:1424/database/realestate",{filter: {name: params.name },selection: "", quantity: 1})         
+        const URL = import.meta.env.VITE_SERVER_URL;
+        const response = await axios.post(URL + "database/realestate",{filter: {name: params.name },selection: "", quantity: 1})         
         console.log(response.data)
         return response.data
     }

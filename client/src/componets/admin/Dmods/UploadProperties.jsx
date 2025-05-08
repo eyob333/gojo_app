@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./Upload.css"
 import Input from "../../ui/Input"
-import { propertiesData  as inputdata, realestate } from "../../../assets/data";
+import { propertiesData  as inputdata} from "../../../assets/data";
 
 const UploadProperties = (...props) => {
   const [files, setFiles] = useState([]);
@@ -47,19 +47,29 @@ const UploadProperties = (...props) => {
         realestate: data.realstate,
         price: Number(data.price),
         price_type: data.price_type,
-        project: data.project,
+        project: data.project.toUpperCase(),
         features: {
           area: Number(data.area),
+          bed: Number(data.bed),
+          bathroom: Number(data.bathroom),
           pool: Boolean(data.pool),
           height: Number(data.height),
-          type: data.type,
+          type: data.type.toUpperCase(),
           special: data.special,
+          reinvated_date: Date(data.reinvated_date),
+          built_date: Date(data.built_date),
+          class: data.class.toUpperCase()
         },
         location: data.location,
         detail: data.details,
-        description: data.description
+        description: data.description,
+        special_tag: data.special_tag.toUpperCase(),
+        special_search_tag: data.special_search_tag.toUpperCase(),
+        sales_person_name: data.sales_person_name.toUpperCase(),
+        sales_person_contact: data.sales_person_contact,
       }
-      const response = await axios.post("http://localhost:1424/admin/database/upload", { images: previews, data: reqFormat, schema: "properties"});
+      const URL = import.meta.env.VITE_SERVER_URL;
+      const response = await axios.post( URL + "admin/database/upload", { images: previews, data: reqFormat, schema: "properties"});
       console.log("Upload successful: ", response.data);
       alert("Files uploaded successfully!");
     } catch (error) {
@@ -75,7 +85,7 @@ const UploadProperties = (...props) => {
     <div className="upload">
       <h3>{props.dName}</h3>
       <div className="input-field">
-          {inputdata.map( d => <Input key={d.name} type={d.type} placeholder={d.placeholder} id={d.id} name={d.name} root={d.root} onChange={handeleDataChange} />
+          {inputdata.map( d => <Input key={d.name} type={d.type} placeholder={d.placeholder} id={d.id} name={d.name} Element={d.Element} selectioinOptions={d.selectioinOptions} root={d.root} onChange={handeleDataChange} />
           )}         
 
         <Input type="file" accept="image/*" multiple onChange={handleFileChange} />

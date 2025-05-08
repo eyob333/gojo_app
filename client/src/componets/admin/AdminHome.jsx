@@ -18,6 +18,8 @@ function AdminHome({admin = 'admin'}){
 
         <div className="admin-nav">
             <div className="admin-option">
+                <Button className={`admin-option-btn ${render ==='dashboard' && 'active'}`} disabled={render ==='dashboard' && true} onClick={() => handleClick('dashboard')} 
+                    ><h4>Dashboard</h4></Button>
                 <Button className={`admin-option-btn ${render ==='analytics' && 'active'}`} disabled={render ==='analytics' && true} onClick={() => handleClick('analytics')} 
                     ><h4>Analytics</h4></Button>
                 <Button className={`admin-option-btn ${render ==='database' && 'active'}`} disabled={render ==='database' && true}  onClick={() => handleClick('database')} >
@@ -29,6 +31,7 @@ function AdminHome({admin = 'admin'}){
             </div>
             <div className="admin-option-details">
                 { render === 'database' &&  <Database />}
+                { render === 'dashboard' && <NotAvaliable />}
                 { render === 'analytics' && <NotAvaliable />}
                 { render === 'clients' && <NotAvaliable />}
                 { render === 'issues' && <NotAvaliable />}

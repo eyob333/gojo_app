@@ -20,6 +20,11 @@
 
   .footer-item h5{
     font-size: 1rem;
+    color: rgb(204, 208, 212);
+  }
+
+  .footer-item p{
+    color: rgb(205, 205, 205);
   }
 
   #footer hr{
@@ -34,8 +39,8 @@
   }
 
   .footer-icon{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
   #footer-logo{
     display: grid;

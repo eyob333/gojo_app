@@ -1,4 +1,3 @@
-import Root from "../pages/Root"
 
 const data = [ {
         type:"text", 
@@ -33,10 +32,26 @@ const data = [ {
         name:"site"
     }, {
         type:"text", 
-        placeholder:"someone@testmail.com, 0943942493, solomon arega",
-        id:"sales",
-        name:"sales"
+        placeholder:"solomon arega",
+        id:"sales_name",
+        name:"sales_name"
     }, {
+        type:"text", 
+        placeholder:"someone@testmail.com 0943942493",
+        id:"sales_contact",
+        name:"sales_contact"
+    },{
+        type:"text", 
+        placeholder:"https:://google.com",
+        id:"website",
+        name:"website"
+    },
+    {
+        type:"text", 
+        placeholder:"piassa, near adwa",
+        id:"head_office",
+        name:"head_office"
+    },{
         type:"text",
         id:"details",
         name:"details",
@@ -54,18 +69,22 @@ const data = [ {
 const propertiesData = [ {
     type:"text", 
     placeholder:"Ayat",
-    id:"realstate",
-    name:"realstate",
+    id:"realEstate",
+    name:"realEstate",
  }, {
     type:"number", 
     id:"price",
     name:"price",  
     placeholder:"15000"
  }, {
+    Element: "select",
     type:"text",
     id:"price_type", 
     name:"price_type",
-    placeholder:"/sq (m)"
+    selectioinOptions: [
+        {option: "Fixed"},
+        {option: "sqmt"}
+    ],
  }, {
     type:"text",
     id:"project",
@@ -83,15 +102,32 @@ const propertiesData = [ {
     id:"area",
     name:"area"
 }, {
+    type:"number" ,
+    placeholder:"total number of beds" ,
+    id:"bed",
+    name:"bed"
+}, {
+    type:"number" ,
+    placeholder:"total number of bathrooms" ,
+    id:"bathroom",
+    name:"bathroom"
+},{
     type:"number", 
     placeholder:"totoal roof height",
     id:"height",
     name:"height"
 }, {
+    Element: "select",
     type:"text",
     id:"type",
     name:"type",
-    placeholder:"Appartment, condo",
+    selectioinOptions: [
+        { option: "Condo"},
+        { option: "Apartment"},
+        { option: "Villa"},
+        {option: "Single-family_home"},
+        {option: "Luxury-Home"},
+    ],
     
 }, {
     type:"checkbox",
@@ -99,12 +135,45 @@ const propertiesData = [ {
     name:"pool",
     placeholder:"",
 }, {
+    type:"date",
+    id:"reinvated_date",
+    name:"reinvated_date",
+    placeholder:"",
+},{
+    type:"date",
+    id:"expired_date",
+    name:"expired_date",
+    placeholder:" the date this property to be sold out",
+},{
+    type:"text",
+    id:"class",
+    name:"class",
+    placeholder:"A, B or C",
+},{
+    type:"text",
+    id:"absolute_location",
+    name:"absolute_location",
+    placeholder:"X and Y Coordinate separated by space",
+},{
+    type:"text",
+    id:"sales_person_name",
+    name:"sales_person_name",
+    placeholder:"Sara desalegn",
+},
+{
+    type:"text",
+    id:"sales_person_contact",
+    name:"sales_person_contact",
+    placeholder:"name and email separated by space",
+},
+{
     type:"text",
     id:"special",
     name:"special",
     placeholder:"enter special features",
     root:"textarea"
-},  {
+}, 
+ {
     type:"text",
     id:"details",
     name:"details",
@@ -119,113 +188,7 @@ const propertiesData = [ {
 },
 ]
 
-const uploadConfig = [
-    {
-        type: "number",
-        name: "realestate",
-        id: "realestate",
-        placeholder: 'Ayat',
-    },
-    {
-        type: "text",
-        name: "price",
-        id: "price",
-        placeholder: '85934',
-    },
-    {
-        type: "text",
-        name: "price_type",
-        id: "price_type",
-        placeholder: '/sq(M) or full',
-    },
-    {
-        type: "checkbox",
-        name: "pool",
-        id: "pool",
-    },
-    
-]
-const realestate = [{
-    name: "AYAT",
-    project: 5,
-    properties: 34,
-    site: 7,
-    rating: 4.5,
-    website: "sdks",
-    email: "soem",
-    icons: 'src/assets/ayat_logo.daf534f7.webp'
-    
-},{
-    name: "DMC",
-    project: 5,
-    properties: 34,
-    site: 7,
-    rating: 4.5,
-    website: "",
-    email: "soem",
-    icons: '/src/assets/dmc-img.webp'
-    
-},{
-    name: "OVID",
-    project: 5,
-    properties: 34,
-    site: 7,
-    rating: 4.5,
-    website: "sdks",
-    email: "soem",
-    icons: '/src/assets/ovid-realestate-white.webp'
-    
-},{
-    name: "NOAH",
-    project: 5,
-    properties: 34,
-    site: 7,
-    rating: 4.5,
-    website: "sdks",
-    email: "soem",
-    icons: './assets/NOAH-Logo.webp'
-    
-},]
-
-const deals = [{
-    name: "vila", 
-    price: 58,
-    type: "/sq(m)", 
-    description: "2 bed rooms", 
-    details: "sdksdlksdklfsd, lsd, sd", 
-    img: 'https://picsum.photos/200'
-    },{
-        name: "appartment", 
-        price: 45,
-        type: "/sq(m)", 
-        description: "2 bed rooms", 
-        details: "sdksdlksdklfsd, lsd, sd",
-        img: 'https://picsum.photos/200'
-    },
-    {
-        name: "condo", 
-        price: 78,
-        type: "/sq(m)", 
-        details: "jskdsl, sldkfsd", 
-        description: "2 bed rooms",
-        img: 'https://picsum.photos/200'
-    },{
-        name: "appartment", 
-        price: 45,
-        type: "/sq(m)", 
-        description: "2 bed rooms", 
-        details: "sdksdlksdklfsd, lsd, sd",
-        img: 'https://picsum.photos/200'
-    },
-    {
-        name: "condo", 
-        price: 78,
-        type: "/sq(m)", 
-        details: "jskdsl, sldkfsd", 
-        description: "2 bed rooms",
-        img: 'https://picsum.photos/200'
-    }
-]
 
 
-export {data, deals, realestate, propertiesData}
+
+export {data, propertiesData}

@@ -8,13 +8,25 @@ main{
   width: 100vw;
   width: 100%;
   height: 100%;
-  background-image: url("./photo_2025-03-07_15-29-34.jpg"); 
-  background-color: #cccccc; 
+  background-image: url("./photo_2025-03-07_15-29-34.webp"); 
+  background-color: rgba(255, 249, 249, 0.251); 
   height: 700px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 
+}
+#main-cover{
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  width: 100%;
+  height: 100%;
+  height: 700px;
+  background-color: rgba(84, 91, 97, 0.541);
+  filter: blur(100%) contrast(1000%) brightness(100%) drop-shadow(16px 16px 20px rgb(73, 153, 167)) invert(5%);;
 }
 
   .main-heading{
@@ -22,6 +34,8 @@ main{
     margin: 0;
   }
   #main h1 {  
+    position: relative;
+    z-index: 1;
     font-family: 'eBuenaClassic', sans-serif;  
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
                                                                                                                                                                                                                             
@@ -33,23 +47,29 @@ main{
     letter-spacing: .2rem;
   }
   #main h2{
+    position: relative;
+    z-index: 1;
     font-family: 'Shapeingo', sans-serif;
     font-weight: 400;                                        
     margin-top: 4%;
     padding-bottom: 1%;
     font-size: 1rem;
-    color: #ffffff;
+    color: #ffffffde;
   }    
   
   main hr{
-    width: 20%;
-    border-color: #6cc7e0;
-    /* margin-left: 0; */
-    border-style:outset;
-    border-top: 0;
-    /* left: 0 */
-  }
+    position: relative;
+    z-index: 1;
+    width: 15%;
+    border-color: #d5c6c6;
+    border-style: solid;
+    border-width: 1px;
+    border-top-right-radius: 90%;
+    border-top-left-radius: 90%;
+    border-bottom-right-radius: 90%;
+    border-bottom-left-radius: 90%;
 
+  }
   
   
   /**************** Main *********************/
@@ -99,68 +119,16 @@ main{
     background-color: #96cee7;
     padding: 3% 5%;
   }
-  .search {
-    margin: 5% 0%;
-    padding: 3% 5%;
-    width: 70%;
-    display: grid;
-    justify-content: left;
-    border-radius: 1%;
-    background-color: #5d7079;
-    color: black;
-  }
-
-  .search h1, p{
-    margin: 0;
-  }
 
   .search-heading{
     width: 75%;
   }
   
-  .search input{
-    width: 100%;
-    height: 40px;
-  }
-
-  
   #shows{
     margin-top: 30vh;
     padding: 0 5%;
   }
-  .shows{
-    margin-bottom: 40px;
-  }
   
-  .show-items{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 20px;
-  }
-  .show-item img{
-    height:fit-content;
-    border-radius: 3%;
-  }
-  .show-item{
-    border-width: 1px;
-    /* border-style: solid; */
-    border-radius: 3%;
-    margin-top: 4%;
-    background-color: #4f5875;
-  }
-  .show-item .details{
-    padding: 0 4%;
-  }
-  .show-item h3, p {
-    margin: 0;
-  }
-  .show-item  p {
-    font-family:'Courier New', Courier, monospace;
-    color: #d8e4e0;
-    font-size: .8rem;
-    width: 80%;
-  }
 
   
   .real-estate-section {
@@ -198,6 +166,7 @@ main{
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
     gap: 1rem;
   }
   
@@ -205,10 +174,12 @@ main{
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
+    width: 60%;
+    max-height:65%;
   }
   
-  .stat-box.white {
-    background: #292323;
+  .stat-box.dark{
+    background: #343030;
     color: #ffffff;
   }
 
@@ -216,13 +187,17 @@ main{
     width: 40px;
   }
   
-  .stat-box.dark {
+  .stat-box.white {
     background: #ffffff;
     color: #060505;
   }
 
   .stat-box.dark p{
-    color: #060505;
+    color: #fffafa;
+  }
+
+  .stat-box.white p{
+    color: #302b2b;
   }
   
   .stat-box h3 {
@@ -261,7 +236,7 @@ main{
     position: absolute;
     bottom: -20px;
     left: -20px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 50%;
     padding: 1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -279,92 +254,36 @@ main{
   .circle-badge small {
     font-size: 0.6rem;
     font-weight: normal;
-    color: #777;
+    color: #2e2929;
+  }
+  .circle-badge span{
+    color: #060505;
   }
   
 
   @media ( 576px <= width <= 768px){
-  
-    main{
-      grid-template-columns: 75%;
-    }
-    main h2{
-      width: 50%;
-    }
-    main hr{
-      width:60%;
-      border-style:solid;
-      color: #7C9A90;
-      margin-left: 0;
-      left: 0
-    }
-    .img{
-      position: absolute;
-      z-index: -1;
-      right: 0;
-      top: 40%;
-      width: 400px;
-      height: 400px;
-    }
-    img{
-      width: 100%;
-      height: 100%;
-    }
-    .show-items{
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
 
+    #main {
+      background-image: url("./forScreenMed.webp"); 
+    }
+    .main-heading{
+      padding-top: 100px;
+    }
+ 
+  }
 
   
 @media ( width <= 576px) {
 
-  main{
-    display: grid;
-    grid-template-columns: 100%;
-
+  #main {
+    background-image: url("./forScreenSmall.webp"); 
   }
-
-  #main h1 {
-    padding-top: 6%;
-    font-size: 4.5rem;
+  .main-heading{
+    padding-top: 100px;
   }
-  #main h2{
-    width: 50%;
-    font-size: .9rem;
-  }
-  main hr {
-    width: 50%;
-    color: #7C9A90;
-    margin-left: 0;
-    border-style: solid;
-    left: 0
-  }
-  .intro-one{
-    margin-top: 100%;
-  }
-  .element-title{
-    /* font-family: 'Kraftstoff', sans-serif;                                            */
-    font-size: 1.8rem;
-
-  }
-  .home-cards{
-    grid-template-columns: 100%;
-    gap: 15px;
-    margin: 0;
-  }
-  .element-heading{
-    width: 60%;
-  }
-  .search {
-    margin: 5% 15%;
-    margin-left: 0;
-    margin-top: 10%;
-  }
-
-  /* shows */
-  .show-items{
-    grid-template-columns: repeat(1, 1fr);
+  .real-estate-section h2{
+    margin-top: 0;
+    font-size: 2rem;
   }
 
   

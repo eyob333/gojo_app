@@ -26,8 +26,8 @@
 
 .admin-option-details{
     background-color: rgba(61, 108, 138, 0.208);   
-    height: 100vh;
     border-radius: 1%;
+    min-height: max-content;
 }
 
 .admin-option-btn{
@@ -43,9 +43,9 @@
 }
 .admin-option-btn.active{
     border-bottom: 2px; 
-    border-radius: 10%;
     border-style: outset;
+    border-radius: 10px;
     color: rgb(60, 83, 86);
-    border-bottom-right-radius: 0%;
+    background-color: rgb(72, 73, 72);
 
 }

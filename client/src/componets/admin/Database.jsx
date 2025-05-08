@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "../ui/button"
+import Button from "../ui/Button";
 import Loader from "../dynamics/Loader";
 import Error from "../dynamics/Error";
 import DatabaseMod from "./DatabaseMod";
@@ -17,7 +17,8 @@ function Database(){
     // Define the API call
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:1424/admin/collection", {
+        const URL = import.meta.env.VITE_SERVER_URL;
+        const response = await axios.get(URL + "admin/collection", {
           maxRedirects: 5, // Axios automatically follows redirects
         });
         setData(response.data); // Set the response data

@@ -1,7 +1,8 @@
 
 .gear-container {
+    margin-top: 100px;
     position: relative;
-    left: 40%;
+    left: 44%;
     width: 150px;
     height: 150px;
 }
@@ -20,6 +21,7 @@
 }
 .gear-text{
     text-align: center;
+    margin-bottom: 20%;
 }
 @keyframes rotateGear {
     from { transform: rotate(0deg); }
@@ -28,4 +30,28 @@
 @keyframes rotateGearReverse {
     from { transform: rotate(0deg); }
     to { transform: rotate(-360deg); }
+}
+
+
+@media ( 576px <= width <= 768px){
+
+    .gear-container {
+        margin-top: 150px;
+        left: 42%;
+    }
+ 
+  }
+
+  
+@media ( width <= 576px) {
+
+    .gear-container{
+        margin-top: 150px;
+        left: 40%;
+    }
+    .gear-text{
+        margin-bottom: 40%;
+    }
+
+  
 }

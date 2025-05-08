@@ -8,7 +8,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [isAuth, setIsAuth] = useState(true)
+  const [isAuth, setIsAuth] = useState(false)
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,7 +22,8 @@ const AdminLogin = () => {
       const filter = {
         username: username
       }
-      const response = await axios.post("http://localhost:1424/admin", { filter, schema:"admin", data });
+      const URL = import.meta.env.VITE_SERVER_URL;1424
+      const response = await axios.post( URL + "admin", { filter, schema:"admin", data });
       console.log("Login successful: ", response.data);
       console.log("foo", response)
       setIsAuth(true)
@@ -47,6 +48,7 @@ const AdminLogin = () => {
               onChange={(e) => setUsername(e.target.value)}
               required
               style={{ width: "100%", padding: "8px", margin: "5px 0" }}
+              autoComplete="true"
             />
 
             <input
@@ -56,6 +58,7 @@ const AdminLogin = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               style={{ width: "100%", padding: "8px", margin: "5px 0" }}
+              autoComplete="true"
             />
             {error && <p style={{ color: "red" }}>{error}</p>}
             <button type="submit" disabled={loading} style={{ width: "50%", padding: "8px", marginTop: "10px" }}>

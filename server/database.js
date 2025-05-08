@@ -3,13 +3,19 @@ import { connect, Schema, model, connections} from "mongoose";
 
 
 const url_mongodb = "mongodb+srv://" + process.env.USERNAME_MONGODB + ":" +  process.env.PASSWORD_MONGODB + "@cluster0.qf4ue.mongodb.net/gojo_homes?retryWrites=true&w=majority&appName=Cluster0&"
-connect(url_mongodb ||"mongodb://localhost:27017/gojo");
+try {
+    await connect(url_mongodb ||"mongodb://localhost:27017/gojo");
+    console.log("connect?");
+}
+catch (err) {
+    console.log(err)
+}
 
 class DataBase{
     constructor(){
         //schemas 
         this.schemaPR = Schema({
-            realEstate: {type: String},
+            realEstate: {type: String, default: 'AYAT'},
             project: {type: String, default: ''},
             price: {type: Number},
             price_type: {type: String },
@@ -19,15 +25,30 @@ class DataBase{
             },
             features: {
                 area: {type: Number,  default: 0},
+                bed: {type: Number,  default: 0},
+                bathroom: {type: Number, default: 0},
                 pool: {type: Boolean, default: false},
                 height: {type: Number, default: 0},
                 type: {type: String,  default: ""},
                 special: {type: String, default: ""},
-                date: {type: Date}
+                reinvated_date: {type: Date, default: Date()},
+                built_date: {type: Date, default: null},
+                class: {type: String, default: null},
+                location_img: {type: String},
+                absolute_location: {type: String}
             },
             details: {type: String},
             location: {type: String},
             description: {type: String},
+            status: {type: String},
+            special_tag: {type: String},
+            special_search_tag: {type: String},
+            payment_options: {type: String},
+            posted_date: {type: Date, default: Date()},
+            expired_date: {type: Date},
+            sold_out: {type: String, default: false},
+            sales_person_name: {type: String},
+            sales_person_contact: {type: String},
             flag: {
                 type: {type: String, default: "delete"},
                 value:{type: Boolean, default: false}
@@ -47,27 +68,48 @@ class DataBase{
             detail: {type: String},
             description: {type: String},
             image_urls: {default: []},
-            sales: {type: String}
+            sales_name: {type:String},
+            sales_contact: {type: String},
+            website: {type: String},
+            head_office: {type: String, default: null}
         })
 
         this.schemaCL = Schema({
             first_name: {type: String},
             last_name: {type: String},
             email: { type: String},
-            phoneNum: {type: Number},
-            
+            phone_num: {type: Number},
+            property_id: {type: String},
+            submition_date: {type: Date, default: Date()},
+            willing_to_Share: {type: Boolean, default: null},
+            location: {type: String}
         })
 
         this.schemaAD = Schema({
             username : {type: String},
             email: {type: String},
-            password : {type: String}
+            password : {type: String},
+            logged_in: {type: Boolean, default: null},
+            logged_in_time: {type: Date, default: null}
+        })
+
+        this.schemaMS = Schema({
+            announcement: {type: String},
+            posted_date: {type: Date, default: Date()},
+            expired_date: {type: Date}
+        })
+
+        this.shcemaCT = Schema({
+            name: {type: String},
+            email: {type: String},
+            
         })
 
         this.modelCL = model("users", this.schemaCL)
         this.modelPR = model("properties", this.schemaPR)
         this.modelRS = model("realEstate", this.schemaRS)
         this.modelAD = model("admins", this.schemaAD)
+        this.modelMS = model("announcement", this.schemaMS)
 
     }
 
@@ -111,7 +153,7 @@ class DataBase{
             else if (schema == 'properties'){
                 if(selection || condition){
                     const data = await this.modelPR.find({...filter}).select(selection).where('price').lt(condition)
-                    console.log("crazy bruh")
+                    console.log("c")
                     return data                    
                 }else{
                     if (quantity > 1 || quantity === undefined){
@@ -122,7 +164,6 @@ class DataBase{
                         console.log("whasupaass")
                         return data 
                     }
-    
                 }
             }
             else if (schema == 'realestates') {
@@ -139,9 +180,6 @@ class DataBase{
                 const data = await this.modelCL.find({...filter})
                 return data    
             }
-            else{
-                return "error! invalid token"
-            }
         } catch (err){
             return err
         }
@@ -150,11 +188,16 @@ class DataBase{
 
         try{
             const collections = await connections[0].listCollections();
+            
             const names = [];
             collections.map((k) =>{
-                names.push({name: k.name});
+                if (k.name !== "admins" || k.name !== "announcements"){
+                   names.push({name: k.name}); 
+                }
             });
-            console.log(names);
+            names.splice(1, 1);
+            names.splice(0, 1);
+            console.log("foo2", names)
             return names     
         } catch (err) {
             return err

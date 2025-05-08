@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import List from "../componets/ui/List"
-// import NotAvaliable from "../componets/dynamics/NotAvaliable"
 import Loader from "../componets/dynamics/Loader"
 import Error from "../componets/dynamics/Error"
 import './pagesCss/realestate.css'
+
 
 function Realestate(){
     const [data, setData] = useState([])
@@ -19,7 +19,8 @@ function Realestate(){
         async function fetch(){
             setIsLoding(true)
             try {
-                const response = await axios.post("http://localhost:1424/database/realestate",{filter: {}, selection: "id name icons", quantity: 2});
+                const URL = import.meta.env.VITE_SERVER_URL;
+                const response = await axios.post( URL + "database/realestate",{filter: {}, selection: "id name icons", quantity: 2});
                 console.log(response);             
                 setData(response.data)
                 setIsLoding(false)

@@ -2,14 +2,17 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import "./pagesCss/properties.css"
 import ShowCard from "../componets/ui/ShowCard"
-import Error from "../componets/dynamics/Error"
-import Loader from "../componets/dynamics/Loader"
+import Error from "../componets/dynamics/Error";
+import Loader from "../componets/dynamics/Loader";
+
+
+const URL = import.meta.env.VITE_SERVER_URL;
 
 
 function Properties(){
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    const [error, setError] = useState(undefined);
     const [resD, setResD] = useState(undefined);
     const [priceVal, setPriceVal] = useState(100);
 
@@ -23,8 +26,8 @@ function Properties(){
             }   
             const selection = "image_urls.main _id description location price price_type features.type _id"
             const condition = priceVal
-            const response = await axios.post("http://localhost:1424/database/properties", {schema: "properties", filter, selection, condition});
-            console.log("Upload successful: ", response.data);
+            const response = await axios.post( URL + "database/properties", {schema: "properties", filter, selection, condition});
+            console.log("response data", response.data);
             setResD(response.data)
             setLoading(false)
         }
@@ -39,8 +42,9 @@ function Properties(){
         const { name, value } = event.target
         setData(prevState => ({
           ...prevState,
-          [name]: value
+          [name]: value == "All" ||  value == "Any Where" ? undefined: value
         }));
+        console.log("yoo", data);
     }
 
     useEffect( () => {
@@ -56,31 +60,32 @@ function Properties(){
         setPriceVal(document.getElementById("range").value);        
     }
 
-        // move()
     return <> 
     <section id="properties">
-        <div id="search">
-            <div className="container">
+        <div id="search" className={`${error || loading? "nogrid" : undefined}`}>
+            <div className="properties-container">
                     <p className="heading">Find Your Dream Home Easily And Quickly Here</p>
                     <div className="search-box">
                         <div className="search-item">
                             <span className="label">Location</span>
-                            <input type="text" name="location" className="value" placeholder="Bali, Indonesia" onChange={handeleDataChange} />  
+                            <input type="text" name="location" className="value" placeholder="piassa, Addis Ababa" onChange={handeleDataChange} defaultValue={"Any Where"} />  
                         </div>
                         <div className="search-item">
                             <span className="label">Type</span>
-                            <select name="type" className="value"  onChange={handeleDataChange}>
+                            <select name="type" className="value" defaultValue={"All"}  onChange={handeleDataChange}>
                                     <option value="Apartment">Apartment</option>
                                     <option value="Condo">Condo</option>
                                     <option value="Villa">Villa</option>
                                     <option value="Single-family_home">Single-family home</option>
+                                    <option value="All">All</option>
                                 </select>
                         </div>
                         <div className="search-item">
-                            <span className="label">Price Type</span>
+                            <span className="label" >Price Type</span>
                             <select name="price_type" className="value" onChange={handeleDataChange}> 
                                 <option value="Fixed">Fixed</option>
                                 <option value="Sqmt">Sqmt</option>
+                                <option value="All">All</option>
                             </select>
                         </div>
                         <button className="search-button" onClick={handleSubmit}>
@@ -89,21 +94,22 @@ function Properties(){
                     </div>
             </div>
             <div className="slider">
-                <div id="output" style={{marginLeft: `${priceVal}%`}} className="output">
-                    { `>$${priceVal}`}
+                <div id="output" style={{marginLeft: `${priceVal/2}%`}} className="output">
+                   <p>{ `$${priceVal}`}</p> 
                 </div>
-                <input  type="range" min="0" max="100" value={priceVal} step="10" onChange={() => move()} id="range" />
+                <input  type="range" min="0" max="200" value={priceVal} step="1" onChange={() => move()} id="range" />
             </div>
         </div>
+        
 
-        <div>
+        <div className={`properties-search-result ${error || loading? "serch-result-nogrid" : undefined}`}>
             {loading && <Loader />}
             {error && <Error />}
             {resD && resD.map( d => {
                 return <ShowCard key={d._id} _id={d._id} name={d.features.type} price={d.price} description={d.description} details={d.description} type={d.price_type} img={d.image_urls.main} />
             })}
         </div>
-        </section>
+    </section>
     </>
 }
 

@@ -8,7 +8,7 @@ function Footer(){
             <div className='footer-logo'>
                 <Link to={"./"}>
                     <div id='footer-logo'  className="logo">
-                        <img src="/gojo1.png" alt="" />
+                        <img src="/gojo1.webp" alt="gojo homes logo" />
                     </div>
                 </Link>
                 
@@ -20,8 +20,8 @@ function Footer(){
                     </div>
                     <div className='footer-links'>
                         <Link to={''}> <p>Home</p> </Link>
-                        <Link to={'realestate'}> <p>Real e-states</p>  </Link>                     
-                        <Link to={'toppis'} > <p>Top Pics</p> </Link>
+                        <Link to={'realestate'}> <p>Real e-states</p> </Link>                     
+                        <Link to={'properties'} > <p>Properties</p> </Link>
                     </div>
                 </div>
 

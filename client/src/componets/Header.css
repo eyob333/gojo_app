@@ -4,33 +4,73 @@
     align-items: center;
     justify-content: center;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 10;
   }
   
-
   #header-logo{
     width: 90px;
     height: 90px;
   }
   
+  .details svg{
+    width: 30px;
+  }
   .nav-btn{
     display: flex;
-    padding-right: 5px;
-    gap: 40px;
-    /* width: 20%; */
+    align-items: center;
+    gap: 20px;
+    /* padding: 0; 
+    margin: 0;  */
   }
-  
+  .nav-btn.screan-small{
+    gap: 5px;
+  }
+  .nav-btn a{
+    cursor: pointer;
+  }
   .nav-item{
-    border: none;
     border-style: none;
     border-radius: 0;
-
-  }
-  .nav-item p{
     letter-spacing: .12rem;
+    margin: 0;
     font-size: .8rem;
     font-weight: 600;
+    cursor: pointer;
+
   }
   .search-icon{
     border: none;
+    cursor: pointer;
   }
+  .toogle{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+    top: 65%;
+    right: 1%;
+    width: 150px;
+    height: 160px;
+    background-color: rgba(81, 93, 105, 0.815);
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    padding-top: 30px;
+  }
+  .toogle button p{
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  .day-icon {
+      /* background-color: rgba(151, 249, 59, 0); */
+      transition-property: all;
+      transition-timing-function:ease;
+      transition-duration: 500ms;
+      border: 0;
+  }
+  .day-icon svg{
+    width: 25px;
+  }
+  
+

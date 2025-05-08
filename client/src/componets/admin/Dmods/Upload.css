@@ -1,6 +1,7 @@
 .upload {
     padding: 10px 40px;
     width: 80%;
+    height: fit-content;
     color: aliceblue;
 }
 

@@ -1,7 +1,7 @@
-.loader {
+/* .loader {
     width: 60px;
     aspect-ratio: 1;
-    color: #514b82;
+    color: #66e3b7;
     position: relative;
   }
   .loader::before,
@@ -25,4 +25,64 @@
       66%  {transform:translateY(calc(var(--s,1)*-20%));background-position: 0 calc(var(--s,0)*-100%),calc(var(--s,0)*100% + 100%) 50%}
       90%,
       100%  {transform:translateY(calc(var(--s,1)*0));  background-position: 0 calc(var(--s,0)*-100%),calc(var(--s,0)*100% + 100%) 50%}
-  }
+  } */
+
+.fallback-container{
+  position: relative;
+}
+
+.fallbafck-home-top{
+  display: grid;
+  justify-content: center;
+  position: relative;
+  bottom: 0px;
+  left: 0;
+}
+
+.fallbafck-home-top svg{
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.fallback-colons{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  bottom: 90px;
+  left: 0;
+}
+
+.fallback-colons svg{
+  width: 120px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fallback-loader-container{
+  display: grid;
+  justify-content: center;
+  position: relative;
+  bottom: 150px;
+  left: 0;
+}
+
+.fallback-loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#68ed92 0 0);
+  background: 
+    var(--c) 0%   100%,
+    var(--c) 50%  100%,
+    var(--c) 100% 100%;
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+  0%  {background-size: 20% 100%,20% 100%,20% 100%}
+  20% {background-size: 20% 60% ,20% 100%,20% 100%}
+  40% {background-size: 20% 80% ,20% 60% ,20% 100%}
+  60% {background-size: 20% 100%,20% 80% ,20% 60% }
+  80% {background-size: 20% 100%,20% 100%,20% 80% }
+  100%{background-size: 20% 100%,20% 100%,20% 100%}
+}
