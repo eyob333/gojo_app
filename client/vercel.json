@@ -1,12 +1,5 @@
 {
-    "projects": {
-      "client": {
-        "source": "client",
-        "buildCommand": "npm run build",
-        "outputDirectory": "dist",
-        "rewrites": [
-          { "source": "/(.*)", "destination": "/index.html" }
-        ]
-      }
-    }
-  }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+}
