@@ -45,7 +45,7 @@ const FileUpload = (...props) => {
     setLoading(true);
     try {
       const reqFormat = {
-        realEstate: data.realEstate.toUpperCase(),
+        realEstate: String(data.realEstate).toUpperCase(),
         rating: Number(data.rating),
         project: {
             project_total: Number(data.project),
@@ -55,7 +55,7 @@ const FileUpload = (...props) => {
         properties: Number(data.properties),
         website: data.website,
         head_office: data.head_office,
-        sales_name: data.sales.toUpperCase(),
+        sales_name: String(data.sales).toUpperCase(),
         sales_contact: data.sales_contact,
         description: data.description
       }
