@@ -51,12 +51,6 @@ const data = [ {
         placeholder:"piassa, near adwa",
         id:"head_office",
         name:"head_office"
-    },{
-        type:"text",
-        id:"details",
-        name:"details",
-        placeholder:"input details here",
-        root:"textarea"
     }, {
         type:"text",
         id:"description",
@@ -191,6 +185,13 @@ const propertiesData = [ {
     placeholder:"add some description here",
     root:"textarea"
 },
+{
+    type:"text",
+    id:"detail",
+    name:"detail",
+    placeholder:"add some detail here",
+    root:"textarea"
+}
 ]
 
 
