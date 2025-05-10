@@ -39,7 +39,7 @@ function ShowCard({name, price = 400, type = "/sqm", description, img, _id, path
                                     </svg>
                                 </div>
                                 <div className="show-item-detail-icons-item">
-                                    <p>{area} sqft</p>
+                                    <p>{area} sqm</p>
                                     <svg className="show-item-icon"  viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#242323">
                                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.9120000000000001"></g>
@@ -53,7 +53,6 @@ function ShowCard({name, price = 400, type = "/sqm", description, img, _id, path
                             <p>{description}</p>
                             <p>{location}</p>                          
                         </div>
-                     
                     </div>
                 </div>
             </Link>)             

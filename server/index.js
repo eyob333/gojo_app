@@ -59,14 +59,17 @@ app.post("/admin/database/upload", async (req, res) => {
     if (schema === 'realestate'){
       data = {
         icons: url[0],
+        image_urls: url[1],
         ...reqData
       }
     }
     else if(schema === 'properties'){
+      const newUrl = url;
+      const nanUrl = newUrl.splice(1);
       data = {
         image_urls: {
           main: url[0],
-          all: url
+          all: nanUrl
         },
         ...reqData
       }

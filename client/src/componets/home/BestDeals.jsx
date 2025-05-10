@@ -34,26 +34,26 @@ function Deals({ heading, filter}){
 
     
     return ( <>
-        <div className={`shows ${isLoading || error || data.length === 0? "nogrid": null}`}>
-            <h2>{heading}</h2>
-            { error && <Error />}
-            { isLoading && <Loader />}
-            { (data.length == 0 || data.length == undefined)  && !isLoading && !error && <p style={{padding: "10%"}}>Mmm. looks like there is no data.</p>}
-            {data && data.length && <div className="show-items"> 
-                {data.map( (d) => {
-                    return <ShowCard 
-                        key={d.name} 
-                        name={d.name} 
-                        type={d.type}
-                        details={d.details}
-                        description={d.description}
-                        img={d.img}
-                        path={'properties'}
-                    />})
-                }        
-            </div> 
-            } 
-        </div>
+            <div className={`shows ${isLoading || error || data.length === 0? "nogrid": null}`}>
+                <h2>{heading}</h2>
+                { error && <Error />}
+                { isLoading && <Loader />}
+                { (data.length == 0 || data.length == undefined)  && !isLoading && !error && <p style={{padding: "10%"}}>Mmm. looks like there is no data.</p>}
+                { data && data.length && <div className="show-items"> 
+                    {data.map( (d) => {
+                        return <ShowCard 
+                            key={d.name} 
+                            name={d.name} 
+                            type={d.type}
+                            details={d.details}
+                            description={d.description}
+                            img={d.img}
+                            path={'properties'}
+                        />})
+                    }        
+                </div> 
+                } 
+            </div>
         </>
         )
 }

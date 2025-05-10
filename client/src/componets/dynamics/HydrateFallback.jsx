@@ -11,7 +11,8 @@ export default function HydrateFallback(){
                     marginTop: "100px",
                     // padding: "50px",
                     paddingTop:"0"
-                }}>
+                }}
+        >
             <div className="fallbafck-home-top">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)">
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -43,9 +44,10 @@ export default function HydrateFallback(){
                     </g>
                 </svg>
             </div>
-            <div className="fallback-loader-container">
+            <div className="fallback-loader-container"  role="status" aria-busy="true">
                 <div className="fallback-loader">
                 </div>
+                <span className="sr-only">Loading...</span>
             </div>
             
         </div>

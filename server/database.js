@@ -63,9 +63,8 @@ class DataBase{
 		        project_finnished: Number,
                 site: Number
             },
-            properties: {type: Number},
+            properties: {type: Number, default: null},
             icons: {type: String},
-            detail: {type: String},
             description: {type: String},
             image_urls: {default: []},
             sales_name: {type:String},

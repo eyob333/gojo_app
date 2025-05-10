@@ -118,6 +118,7 @@ function Header(){
                         <Link to={'realestate'} onClick={handleToogleHide}> <button id="buttonRealEstates" title="RealEstates" className='nav-item' role='button'><p>RealEstates</p> </button></Link>
                         <Link to={'properties'} onClick={handleToogleHide}> <button id="buttonProperties" title="Properties" className='nav-item' role='button'>  <p>Properties</p> </button></Link>
                         <Link to={'announcement'} onClick={handleToogleHide}> <button id="buttonAnnouncement" title="Announcement" className='nav-item' role='button'> <p>Announcement</p> </button></Link>
+                        <Link to={'about'} onClick={handleToogleHide}> <button id="buttonAboutus" title="AboutUs" className='nav-item' role='button'> <p>About Us</p> </button></Link>
                     </div>
                 }
 

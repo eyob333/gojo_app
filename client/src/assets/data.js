@@ -83,7 +83,7 @@ const propertiesData = [ {
     name:"price_type",
     selectioinOptions: [
         {option: "Fixed"},
-        {option: "sqmt"}
+        {option: "sqm"}
     ],
  }, {
     type:"text",
@@ -126,7 +126,7 @@ const propertiesData = [ {
         { option: "Apartment"},
         { option: "Villa"},
         {option: "Single-family_home"},
-        {option: "Luxury-Home"},
+        {option: "Luxury-Home"}
     ],
     
 }, {
@@ -149,6 +149,18 @@ const propertiesData = [ {
     id:"class",
     name:"class",
     placeholder:"A, B or C",
+},
+{
+    type:"text",
+    id:"special_search_tag",
+    name:"special_search_tag",
+    placeholder:"best sellers",
+},
+{
+    type:"text",
+    id:"special_tag",
+    name:"special_tag",
+    placeholder:"top realestate",
 },{
     type:"text",
     id:"absolute_location",
@@ -172,14 +184,7 @@ const propertiesData = [ {
     name:"special",
     placeholder:"enter special features",
     root:"textarea"
-}, 
- {
-    type:"text",
-    id:"details",
-    name:"details",
-    placeholder:"input details here",
-    root:"textarea"
-}, {
+},  {
     type:"text",
     id:"description",
     name:"description",

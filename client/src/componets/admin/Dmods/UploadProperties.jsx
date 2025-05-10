@@ -47,27 +47,28 @@ const UploadProperties = (...props) => {
         realestate: data.realstate,
         price: Number(data.price),
         price_type: data.price_type,
-        project: data.project.toUpperCase(),
+        project: String(data.project).toUpperCase(),
         features: {
           area: Number(data.area),
           bed: Number(data.bed),
           bathroom: Number(data.bathroom),
           pool: Boolean(data.pool),
           height: Number(data.height),
-          type: data.type.toUpperCase(),
+          type: data.type,
           special: data.special,
           reinvated_date: Date(data.reinvated_date),
           built_date: Date(data.built_date),
-          class: data.class.toUpperCase()
+          class: String(data.class).toUpperCase()
         },
         location: data.location,
         detail: data.details,
         description: data.description,
-        special_tag: data.special_tag.toUpperCase(),
-        special_search_tag: data.special_search_tag.toUpperCase(),
-        sales_person_name: data.sales_person_name.toUpperCase(),
+        special_tag: String(data.special_tag).toUpperCase(),
+        special_search_tag: String(data.special_search_tag).toUpperCase(),
+        sales_person_name: String(data.sales_person_name).toUpperCase(),
         sales_person_contact: data.sales_person_contact,
       }
+  
       const URL = import.meta.env.VITE_SERVER_URL;
       const response = await axios.post( URL + "admin/database/upload", { images: previews, data: reqFormat, schema: "properties"});
       console.log("Upload successful: ", response.data);

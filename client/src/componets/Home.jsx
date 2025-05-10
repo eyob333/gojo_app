@@ -20,7 +20,7 @@ function Home(){
         <section className="real-estate-section">
           <div className="rel-container">
             <div className="left">
-              <h2>We brought every real <br />Estae in one place</h2>
+              <h2>We brought every real estate listing into one place</h2>
               <p className="intro-text">
               Discover a revolutionary real estate platform that unifies every listing into one seamless experience. We make it easier than ever to find your dream home in the heart of the city—no more hopping between sites or agents. Everything you need, all in one place.              </p>
               <div className="stats-grid">
