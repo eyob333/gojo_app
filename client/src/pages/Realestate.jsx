@@ -17,7 +17,7 @@ function Realestate(){
             setIsLoding(true)
             try {
                 const URL = import.meta.env.VITE_SERVER_URL;
-                const response = await axios.post( URL + "database/realestate",{filter: {}, selection: "id name icons", quantity: 2});
+                const response = await axios.post( URL + "database/realestate",{filter: {}, selection: "id name icons image_url", quantity: 2});
                 console.log(response);             
                 setData(response.data)
                 setIsLoding(false)
@@ -40,7 +40,7 @@ function Realestate(){
                 <h2 className="realestate-list-heading">RealEstates</h2>
                 <div className="realestae-body">
                     { isLoading? <div className="err-load" > <Loader /></div>: data.map( d => {
-                            return <ProfileCards key={d._id} name={d.name} icon={d.icons} />
+                            return <ProfileCards key={d._id} name={d.name} icon={d.image_url} />
                     })}
                 </div>
             </div>

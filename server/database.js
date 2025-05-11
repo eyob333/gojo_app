@@ -65,7 +65,7 @@ class DataBase{
             properties: {type: Number, default: null},
             icons: {type: String},
             description: {type: String},
-            image_urls: {default: []},
+            image_url: {type: String, default: null},
             sales_name: {type:String},
             sales_contact: {type: String},
             website: {type: String},
