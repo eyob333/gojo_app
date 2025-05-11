@@ -1,7 +1,6 @@
 import 'dotenv/config'
 import { connect, Schema, model, connections} from "mongoose";
 
-
 const url_mongodb = "mongodb+srv://" + process.env.USERNAME_MONGODB + ":" +  process.env.PASSWORD_MONGODB + "@cluster0.qf4ue.mongodb.net/gojo_homes?retryWrites=true&w=majority&appName=Cluster0&"
 try {
     await connect(url_mongodb ||"mongodb://localhost:27017/gojo");
@@ -93,7 +92,8 @@ class DataBase{
         })
 
         this.schemaMS = Schema({
-            announcement: {type: String},
+            title: {type: String},
+            article: {type: String},
             posted_date: {type: Date, default: Date()},
             expired_date: {type: Date}
         })
@@ -101,6 +101,7 @@ class DataBase{
         this.shcemaCT = Schema({
             name: {type: String},
             email: {type: String},
+            phone_num: {type: String},
             
         })
 

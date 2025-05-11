@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import List from "../componets/ui/List"
 import Loader from "../componets/dynamics/Loader"
 import Error from "../componets/dynamics/Error"
+import ProfileCards from "../componets/realEstate/ProfileCards"
 import './pagesCss/realestate.css'
 
 
@@ -11,9 +11,6 @@ function Realestate(){
     const [isLoading, setIsLoding] = useState(false)
     const [error, setError] = useState(undefined);
 
-    function handleClick(){
-        console.log("hi")
-    }
 
     useEffect( () => {
         async function fetch(){
@@ -40,15 +37,13 @@ function Realestate(){
     
     return (  <>
             <div className="realstae-home">
-                <h2 className="realestate-list-heading">Top RealEstates</h2>
+                <h2 className="realestate-list-heading">RealEstates</h2>
                 <div className="realestae-body">
-
-                { isLoading? <div className="err-load" > <Loader /></div>: data.map( d => {
-                        return <List key={d._id} id={d._id} name={d.name} icon={d.icons} onClick={handleClick} />
-                })}
+                    { isLoading? <div className="err-load" > <Loader /></div>: data.map( d => {
+                            return <ProfileCards key={d._id} name={d.name} icon={d.icons} />
+                    })}
                 </div>
             </div>
-
     </>)
 }
 

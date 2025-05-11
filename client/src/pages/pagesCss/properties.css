@@ -168,7 +168,6 @@
 
   
 @media ( width <= 550px) {
-
     #search{
         grid-template-columns: 100%; 
     }
@@ -178,6 +177,9 @@
     .properties-search-result{
         padding-top: 50px;
         grid-template-columns: 100%;
+    }
+    .search-box {
+        padding: 1px;
     }
 
 }

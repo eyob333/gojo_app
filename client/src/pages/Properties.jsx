@@ -84,7 +84,7 @@ function Properties(){
                             <span className="label" >Price Type</span>
                             <select name="price_type" className="value" onChange={handeleDataChange}> 
                                 <option value="Fixed">Fixed</option>
-                                <option value="Sqmt">Sqmt</option>
+                                <option value="Sqm">Sqm</option>
                                 <option value="All">All</option>
                             </select>
                         </div>

@@ -3,7 +3,7 @@ function Error({
     style= "defalut",
     title = "Oops! It seems like this property moved out.",
     statusCode = "404",
-    message = "he page you're looking for might be under construction, temporarily unavailable, or doesn't exist."
+    message = "The page you're looking for might be under construction, temporarily unavailable, or doesn't exist."
     }){
     return <>
         <div className={`error-container ${style}`}>

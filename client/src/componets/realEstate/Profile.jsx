@@ -47,12 +47,12 @@ function Profile(){
 
                 <div className="profile-details">
                     <ul className="profile-detail">
-                        <p>Total properties  {roData.properties}</p>                    
-                        <p>Total project  {roData.project.project_total}</p>
-                        <p>Site  {roData.project.site}</p>
-                        <p>Rating  {roData.rating}</p>
-                        <p>Website {roData.website}</p>
-                        <p>Head Office {roData.headOffice}</p>
+                        <p>Total properties  {roData.properties? roData.properties: "----"}</p>                    
+                        <p>Total project  {roData.project.project_total ? roData.project.project_total: "----"}</p>
+                        <p>Site  {roData.project.site? roData.project.site: "----"}</p>
+                        <p>Rating  {roData.rating? roData.rating: "----"}</p>
+                        <p>Website {roData.website ? roData.website: "----"}</p>
+                        <p>Head Office {roData.head_office ? roData.head_office: "----"}</p>
                     </ul>
                 </div>
 

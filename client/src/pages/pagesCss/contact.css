@@ -35,7 +35,7 @@
    .contact-info p {
     line-height: 1.6;
     margin-bottom: 30px;
-    color: #ccc;
+    color: #ffffff;
    }
   
    .call-to-action button {
@@ -54,15 +54,19 @@
    }
   
    /* Responsive Design - Adjustments for smaller screens */
-   @media (max-width: 768px) {
+   @media ( 550px < width < 768px) {
     .contact-us-container {
     flex-direction: column; /* Stack image and content vertically */
     text-align: center; /* Center text on smaller screens */
     }
   
     .image-container {
+    position: absolute;
+    z-index: -1;
+    left: 35%;
     max-width: 80%; /* Allow image to take more width on smaller screens */
     margin-bottom: 20px; /* Add spacing between image and content */
+    filter:brightness(.5);
     }
   
     .content-container {
@@ -70,3 +74,24 @@
     padding-left: 0; /* Remove left padding */
     }
    }
+   @media (width < 550px) {
+    .contact-us-container {
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px;
+        background-color: #1e272e00;
+        color: #fff;
+        font-family: sans-serif; /* Added a default font */
+       }
+      
+    .image-container{
+        position: absolute;
+        z-index: -1;
+        top: 70px;
+        right: 5;
+        /* width: 50%; */
+    }
+   } 
+   

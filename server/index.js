@@ -5,7 +5,6 @@ import bodyParser from "body-parser";
 import ImageUploader from "./utils/imageUploader.js";
 import DataBase from "./database.js";
 
-
 dotenv.config();
 
 const app = express();
@@ -22,6 +21,25 @@ app.get('/', (req, res) => {
      res.send("u f u p");
   }
  
+});
+
+app.post('/admin', async(req, res) => {
+  try{
+      const filter = req.body.filter
+      const schema = req.body.schema
+      const data = req.body.data
+      const resData = await db.findDb(filter, schema)
+
+      if (resData.password === data.password){
+        res.send("Authorized")    
+      }
+      else {
+        res.send("un authorized")
+      }  
+  } catch (err){
+      console.log(err)
+      res.send(err)
+  }
 });
 
 app.get('/admin/collection', async(req, res) => {
@@ -84,54 +102,6 @@ app.post("/admin/database/upload", async (req, res) => {
   
 });
 
-app.post('/admin', async(req, res) => {
-  try{
-      const filter = req.body.filter
-      const schema = req.body.schema
-      const data = req.body.data
-      const resData = await db.findDb(filter, schema)
-
-      if (resData.password === data.password){
-        res.send("Authorized")    
-      }
-      else {
-        res.send("un authorized")
-      }  
-  } catch (err){
-      console.log(err)
-      res.send(err)
-  }
-});
-
-app.post('/database/realestate', async(req, res) => {
-  try{
-    const selection = req.body.selection
-    const filter = req.body.filter
-    const quantity = req.body.quantity
-    const resposne = await db.findDb(filter, "realestates", selection, undefined, quantity)
-    console.log(resposne)
-    res.send(resposne)
-  } catch (err){
-    res.send(err);
-  }
-  
-});
-
-app.get('/realstate/properties', async(req, res) => {
-  try{
-    const filter = req.body.filter
-    const schema = req.body.schema
-    const selection = req.body.selection
-    const condition  = req.body.condition
-
-    const response = await db.findDb(filter, schema, selection, condition)
-    res.send(response)    
-  } catch (err){
-    res.send(err)
-  }
-
-});
-
 app.post('/database/properties', async(req, res) =>{
   try{
     const filter = req.body.filter
@@ -147,8 +117,35 @@ app.post('/database/properties', async(req, res) =>{
     console.log("foo foo foo", err)
     res.send(err).status(300).statusCode(300)
   }
-
 });
+
+app.post('/database/realestate', async(req, res) => {
+  try{
+    const selection = req.body.selection
+    const filter = req.body.filter
+    const quantity = req.body.quantity
+    const resposne = await db.findDb(filter, "realestates", selection, undefined, quantity)
+    console.log(resposne)
+    res.send(resposne)
+  } catch (err){
+    res.send(err);
+  }
+});
+
+// app.get('/realstate/properties', async(req, res) => {
+//   try{
+//     const filter = req.body.filter
+//     const schema = req.body.schema
+//     const selection = req.body.selection
+//     const condition  = req.body.condition
+
+//     const response = await db.findDb(filter, schema, selection, condition)
+//     res.send(response)    
+//   } catch (err){
+//     res.send(err)
+//   }
+// });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => 

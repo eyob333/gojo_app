@@ -19,13 +19,13 @@ function PropertyProfile(){
     }
 
     return <>
-    <div id="properties">
-      <div className="properties-.image">
-        <div className="properties-.image-items1">
+    <div id="properties-profile">
+      <div className="properties image">
+        <div className="properties-image-items">
           <a href={"/" + data.image_urls.main}> <img src={data.image_urls.main} alt="" /></a>
         </div>
 
-        <div className="properties-.image-items">
+        <div className="properties-image-items">
               <a href={data.image_urls.all[0]} > <img src={data.image_urls.all[0]} alt="realestate property image" /> </a>  
               <a href={data.image_urls.all[1]} > <img src={data.image_urls.all[1]} alt="realestate property image" /> </a> 
               <a href={data.image_urls.all[2]} > <img src={data.image_urls.all[2]} alt="realestate property image"/> </a>  

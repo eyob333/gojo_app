@@ -1,5 +1,5 @@
 
-#properties{
+#properties-profile{
   margin-top: 20px;
   padding: 2%;
 }
@@ -116,6 +116,10 @@
 }
 
 @media ( width <= 576px) {
+  #properties-profile{
+    max-width: 100%;
+    overflow: hidden;
+  }
   .properties-image{
     grid-template-columns: 100%;
     margin: 0;

@@ -2,8 +2,8 @@
 const data = [ {
         type:"text", 
         placeholder:"Ayat",
-        id:"realstate",
-        name:"realstate",
+        id:"realEstate",
+        name:"realEstate",
      }, {
         type:"number", 
         id:"properties",
