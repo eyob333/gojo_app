@@ -14,7 +14,7 @@ class DataBase{
     constructor(){
         //schemas 
         this.schemaPR = Schema({
-            realEstate: {type: String, default: 'AYAT'},
+            realEstate: {type: String},
             project: {type: String, default: ''},
             price: {type: Number},
             price_type: {type: String },

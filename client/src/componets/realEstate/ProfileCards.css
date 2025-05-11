@@ -155,7 +155,7 @@
     bottom: 14px;
     width: 35px;
     height: 35px;
-    background-color: lightgreen;
+    background-color: rgba(3, 168, 218, 0.676);
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -239,7 +239,7 @@
   }
   
   .card button {
-    background-color: lightgreen;
+    background-color: rgb(106, 148, 106);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -284,5 +284,9 @@
         height: auto;
         aspect-ratio: 2 / 1; /* Maintains similar height proportion */
         box-sizing: border-box;
+    }
+    .container-profile-card .card:hover button {
+        transform: scale(10.5);
+        padding-bottom: 10px;
     }
   }

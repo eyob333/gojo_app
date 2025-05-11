@@ -4,7 +4,7 @@ import "./pagesCss/properties.css"
 import ShowCard from "../componets/ui/ShowCard"
 import Error from "../componets/dynamics/Error";
 import Loader from "../componets/dynamics/Loader";
-
+import { Link } from "react-router-dom";
 
 const URL = import.meta.env.VITE_SERVER_URL;
 
@@ -22,10 +22,10 @@ function Properties(){
             const filter = {
                 location: data.location,
                 "features.type": data.type,
-                price_type: '/sq (m)'
+                price_type: data.price_type,
             }   
-            const selection = "image_urls.main _id description location price price_type features.type _id"
-            const condition = priceVal
+            const selection = "image_urls.main _id location price price_type features.type _id"
+            const condition = priceVal * 1000
             const response = await axios.post( URL + "database/properties", {schema: "properties", filter, selection, condition});
             console.log("response data", response.data);
             setResD(response.data)
@@ -102,11 +102,14 @@ function Properties(){
         </div>
         
 
-        <div className={`properties-search-result ${error || loading? "serch-result-nogrid" : undefined}`}>
+        <div className={`properties-search-result ${error || loading? "serch-result-nogrid" : undefined} ${ resD && resD.length ==0 ? "serch-result-nogrid" : undefined}`}>
             {loading && <Loader />}
             {error && <Error />}
-            {resD && resD.map( d => {
-                return <ShowCard key={d._id} _id={d._id} name={d.features.type} price={d.price} description={d.description} details={d.description} type={d.price_type} img={d.image_urls.main} />
+            {resD && resD.length == 0 && <> <p  style={{ display: "block",textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
+                            <p style={{ cursor: "pointer", paddingTop: "14px" ,textAlign: "center", color: "lightgreen"}} onClick={handleSubmit}>Refresh</p>
+                         </>}
+            {resD && resD.length && resD.map( d => {
+                return <ShowCard key={d._id} _id={d._id} name={d.features.type} price={d.price} location={d.location} type={d.price_type} img={d.image_urls.main} />
             })}
         </div>
     </section>

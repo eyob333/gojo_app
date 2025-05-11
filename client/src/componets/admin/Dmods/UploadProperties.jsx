@@ -44,7 +44,7 @@ const UploadProperties = (...props) => {
     setLoading(true);
     try {
       const reqFormat = {
-        realestate: data.realstate,
+        realEstate: String(data.realEstate).toUpperCase(),
         price: Number(data.price),
         price_type: data.price_type,
         project: String(data.project).toUpperCase(),
@@ -58,7 +58,8 @@ const UploadProperties = (...props) => {
           special: data.special,
           reinvated_date: Date(data.reinvated_date),
           built_date: Date(data.built_date),
-          class: String(data.class).toUpperCase()
+          class: String(data.class).toUpperCase(),
+          absolute_location: data.absolute_location
         },
         location: data.location,
         detail: data.details,
