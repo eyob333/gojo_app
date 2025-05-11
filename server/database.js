@@ -30,7 +30,7 @@ class DataBase{
                 height: {type: Number, default: 0},
                 type: {type: String,  default: ""},
                 special: {type: String, default: ""},
-                reinvated_date: {type: Date, default: Date()},
+                reinvated_date: {type: Date, },
                 built_date: {type: Date, default: null},
                 class: {type: String, default: null},
                 location_img: {type: String},
