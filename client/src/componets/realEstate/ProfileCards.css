@@ -270,10 +270,19 @@
   }
   
   @media (max-width: 550px) {
+    .container-profile-card {
+        padding-left: 0;
+    }
     .container-profile-card .card h2{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .card p{
-        font-size: .5rem;
+        font-size: .3rem;
+    }
+    .container-profile-card .card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 1; /* Maintains similar height proportion */
+        box-sizing: border-box;
     }
   }
