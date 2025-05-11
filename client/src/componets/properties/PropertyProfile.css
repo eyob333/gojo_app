@@ -56,8 +56,9 @@
 
 .properties-detail-items{
   display: grid;
-  grid-template-columns: 32% 32% 32%;
+  grid-template-columns: 30% 30% 30%;
   gap: 10px;
+  max-width: 30%;
 }
 .propeties-icons svg{
   width: 30px;
@@ -78,9 +79,10 @@
 
 .properties-moreDetial{
   display: grid;
-  grid-template-columns: 32% 32% 32%;
+  grid-template-columns: 30% 30% 30%;
   margin-top: 40px;
   gap: 10px;
+  max-width: 100%;
 }
 
 .properties-moreDetial-items{
@@ -114,8 +116,6 @@
   margin-top: 20px;
 }
 .properties-locaton img{
-  width: 400px;
-  height: 400px;
   max-width: 100%;
 }
 
@@ -170,6 +170,22 @@
   .properties-deal{
     margin-top: 0;
     padding-top: 10%;
+  }
+  .properties-moreDetial{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 40% 40%;
+    margin-top: 40px;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .properties-detail-items{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 45% 45%;
+    gap: 10px;
+    max-width: 100%;
   }
 
 }
