@@ -80,6 +80,10 @@ function Profile(){
                     </ul>
                 </div>
 
+                <div className={`profile-properties-response ${error || isLoading|| da.length == 0 ? 'nogrid' : undefined}`} >
+
+
+
                 {error && <Error 
                                statusCode="400"
                                 message="Check your network" 
@@ -93,7 +97,8 @@ function Profile(){
                                             return <>looks like there is no properties for this realestate</>
                                         } else{
                                             return <ShowCard
-                                                    key={d._id} 
+                                                    key={d._id}
+                                                    _id={d._id} 
                                                     name={d.name} 
                                                     type={d.type}
                                                     location={d.location}
@@ -111,6 +116,7 @@ function Profile(){
                             <p  style={{textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
                             <Link to={".."}><p style={{textAlign: "center", color: "lightgreen"}}>Go Back</p></Link>
                          </>}
+                </div>
             </div>
         </>
 }

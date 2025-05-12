@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import "./ShowCard.css"
 function ShowCard({name, price = 400, type = "/sqm", description, img, _id, path = undefined, bed = 1, bathroom = 1, area = 148, location}){
-    return (<Link to={path? `${path}/${_id}`:_id} >
+    return (<Link to={path? `/${path}/${_id}`:_id} >
                 <div className="show-item">
                     <div className="show-item-img-container">
                         <img src={img} alt={"Thumbnail of properties"} />

@@ -40,21 +40,37 @@
 
 }
 
-@media ( 576px <= width <= 768px){
+.profile-properties-response{
+    display: grid;
+    grid-template-columns: 32% 32% 32% ;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+}
+.profile-properties-response.nogrid{
+    display: grid;
+    grid-template-columns: 100% ;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+}
+
+
+@media ( 576px < width < 768px){
     .profile-properties .properites{
         grid-template-columns:  50% 50%;
         margin-left: 20px;
     }
+    .profile-properties-response{
+        grid-template-columns: 50% 50% ;
+
+    }
   }
 
 
-@media (576px > width){
-    .profile-properties{
-        padding: 0;
-        margin-top: 20px;
-    }
-    .profile-properties .properites{
-        grid-template-columns:  100%;
-        margin-left: 20px;
+@media (width < 576px){
+    .profile-properties-response{
+        grid-template-columns: 100% ;
+
     }
   }
