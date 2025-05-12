@@ -179,11 +179,11 @@ function Home(){
         <section id="shows">
             <Deals 
               heading={"Best Deals"}
-              filter={"best_deal"}
+              filter={"BEST_DEAL"}
             />
             <Deals
               heading={"Top Properties"}
-              filter={"top_properties"}
+              filter={"TOP_PROPERTIES"}
             />
         </section>
             

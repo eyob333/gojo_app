@@ -152,9 +152,19 @@ class DataBase{
             }
             else if (schema == 'properties'){
                 if(selection || condition){
-                    const data = await this.modelPR.find({...filter}).select(selection).where('price').lt(condition)
-                    console.log("c")
-                    return data                    
+                    console.log(filter, selection, condition, schema);
+                    if (!condition){
+                        const data = await this.modelPR.find({...filter}).select(selection)
+                        console.log("c")
+                        return data
+                    }
+                    else{
+                        const data = await this.modelPR.find({...filter}).select(selection).where('price').lt(condition)
+                        console.log("c")
+                        return data  
+                    }
+        
+                                      
                 }else{
                     if (quantity > 1 || quantity === undefined){
                         const data = await this.modelPR.find({...filter})

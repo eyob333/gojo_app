@@ -4,22 +4,24 @@ import ShowCard from "../ui/ShowCard"
 import Loader from '../dynamics/Loader'
 import "./BestDeal.css"
 
+
+
 function Deals({ heading, filter}){
     const [data, setData] = useState([]);
     const [isLoading, setIsLoding] = useState(false);
     const [error, setError] = useState(undefined);
-;
+
 
     useEffect( () => {
         async function fetch(){
             setIsLoding(true)
             try {
-                const filter = {
-                    special_search_tag: "BEST_DEAL",
+                const Regfilter = {
+                    special_search_tag: { $regex: filter},
                 }
                 const URL = import.meta.env.VITE_SERVER_URL;
-                const selection = "image_urls.main _id description location price price_type features.type";
-                const response = await axios.post( URL + "database/properties", {schema: "properties", filter, selection});
+                const selection = "image_urls.main _id location price price_type features.type _id features.bed features.area features.bathroom";
+                const response = await axios.post( URL + "database/properties", {schema: "properties", filter: Regfilter, selection});
                 setData(response.data)       
                 console.log("foo", response.data)
                 setIsLoding(false)
@@ -30,7 +32,7 @@ function Deals({ heading, filter}){
             }
         }  
         fetch()
-    }, [fetch])
+    }, [])
 
     
     return ( <>
@@ -42,13 +44,18 @@ function Deals({ heading, filter}){
                 { data && data.length && <div className="show-items"> 
                     {data.map( (d) => {
                         return <ShowCard 
-                            key={d.name} 
-                            name={d.name} 
-                            type={d.type}
-                            details={d.details}
-                            description={d.description}
-                            img={d.img}
-                            path={'properties'}
+                            key={d._id} 
+                            _id={d._id} 
+                            name={d.features.type} 
+                            price={d.price} 
+                            location={d.location} 
+                            type={d.price_type} 
+                            img={d.image_urls.main}
+                            bathroom={d.features.bathroom}
+                            area={d.features.area}
+                            bed={d.features.bed}
+                            path={"properties"}
+                            
                         />})
                     }        
                 </div> 

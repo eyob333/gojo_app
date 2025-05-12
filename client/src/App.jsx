@@ -14,6 +14,7 @@ import HydrateFallback from './componets/dynamics/HydrateFallback';
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import ErrorBoundary from './componets/dynamics/ErrorBoundary';
+import Feedback from './pages/Feedback';
 
 const route = createBrowserRouter([{
     path: '',
@@ -35,7 +36,7 @@ const route = createBrowserRouter([{
         { path: 'help', element: <NotAvailable /> },
         { path: 'about', element: <AboutUs /> },
         { path: 'api', element: <NotAvailable /> },
-        { path: 'feedback', element: <HydrateFallback /> },
+        { path: 'feedback', element: <Feedback />},
         { path: 'announcement', element: <HydrateFallback /> }
     ]
 }]);

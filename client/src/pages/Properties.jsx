@@ -24,7 +24,7 @@ function Properties(){
                 "features.type": data.type,
                 price_type: data.price_type,
             }   
-            const selection = "image_urls.main _id location price price_type features.type _id"
+            const selection = "image_urls.main _id location price price_type features.type _id features.bed features.area features.bathroom"
             const condition = priceVal * 1000
             const response = await axios.post( URL + "database/properties", {schema: "properties", filter, selection, condition});
             console.log("response data", response.data);
@@ -109,7 +109,16 @@ function Properties(){
                             <p style={{ cursor: "pointer", paddingTop: "14px" ,textAlign: "center", color: "lightgreen"}} onClick={handleSubmit}>Refresh</p>
                          </>}
             {resD && resD.length && resD.map( d => {
-                return <ShowCard key={d._id} _id={d._id} name={d.features.type} price={d.price} location={d.location} type={d.price_type} img={d.image_urls.main} />
+                return <ShowCard key={d._id} 
+                                _id={d._id} 
+                                name={d.features.type} 
+                                price={d.price} 
+                                location={d.location} 
+                                type={d.price_type} 
+                                img={d.image_urls.main}
+                                bathroom={d.features.bathroom}
+                                area={d.features.area}
+                                bed={d.features.bed} />
             })}
         </div>
     </section>
