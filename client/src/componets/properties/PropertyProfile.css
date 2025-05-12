@@ -171,9 +171,6 @@
     padding-top: 0px;
     grid-template-columns: 100%;
   }
-  .properties-details-detail ul p{
-    /* margin-top: 10px; */
-  }
   .properties-deal{
     margin-top: 0;
     padding-top: 10%;
@@ -195,7 +192,6 @@
     padding: 1% 10%;
     max-width: 100%;
   }
-
 }
 
 

@@ -10,10 +10,10 @@ function ProfileCards({ name, icon }) {
         <p>properties</p>
         <div className="pic" style={{ backgroundImage: `url(${icon})` }}></div>
         <div className="social">
-          <i className="fab fa-facebook-f">> </i>
-          <i className="fab fa-twitter">></i>
-          <i className="fab fa-instagram">></i>
-          <i className="fab fa-github">></i>
+          <i className="fab fa-facebook-f">{'> '}</i>
+          <i className="fab fa-twitter">{'> '}</i>
+          <i className="fab fa-instagram">{'> '}</i>
+          <i className="fab fa-github">{'> '}</i>
         </div>
         <Link to={name}>
           <button>more</button>

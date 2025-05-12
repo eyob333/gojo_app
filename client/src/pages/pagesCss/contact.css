@@ -29,7 +29,7 @@
    .contact-info h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: lightgreen; /* Changed heading color */
+    color: lightgreen /* Changed heading color */
    }
   
    .contact-info p {
@@ -39,7 +39,7 @@
    }
   
    .call-to-action button {
-    background-color: lightgreen;
+    background-color: rgb(128, 245, 128);
     color: #1e272e;
     padding: 15px 30px;
     border: none;
@@ -50,7 +50,8 @@
    }
   
    .call-to-action button:hover {
-    background-color: #9aff81;
+        background-color: #62a152;
+        color: #fff;
    }
   
    /* Responsive Design - Adjustments for smaller screens */
@@ -79,19 +80,26 @@
         display: grid;
         grid-template-columns: 100%;
         align-items: center;
-        justify-content: space-between;
-        padding: 40px;
+        padding: 0;
         background-color: #1e272e00;
         color: #fff;
         font-family: sans-serif; /* Added a default font */
+        margin-top: 40px;
        }
       
     .image-container{
         position: absolute;
         z-index: -1;
-        top: 70px;
-        right: 5;
-        /* width: 50%; */
+        top: 200px;
+        right: 0%;
+        filter:brightness(.5) contrast(1.5);
+        width: 100%;
+        max-width: 80%;
+        visibility: hidden;
     }
+    .content-container {
+        max-width: 100%; /* Allow content to take more width */
+        padding-left: 0; /* Remove left padding */
+        }
    } 
    

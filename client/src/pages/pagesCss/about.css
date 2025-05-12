@@ -52,6 +52,9 @@
     color: #bbb;
     line-height: 1.5;
   }
+  .about-section strong{
+    color: #fff;
+  }
   
   .mission {
     border-color: #ffc107;

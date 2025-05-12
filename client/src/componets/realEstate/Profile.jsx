@@ -92,28 +92,24 @@ function Profile(){
 
 
                 {isLoading && <Loader />} 
-                    { da && da.map( d => {
-                                        if( console.log(d)){
-                                            return <>looks like there is no properties for this realestate</>
-                                        } else{
-                                            return <ShowCard
-                                                    key={d._id}
-                                                    _id={d._id} 
-                                                    name={d.name} 
-                                                    type={d.type}
-                                                    location={d.location}
-                                                    img={d.image_urls.main}
-                                                    bed={d.features.bed}
-                                                    area={d.features.area}
-                                                    bathroom={d.features.bathroom}
-                                                    path={"properties"}
-                                                />
-                                        }
-                                    })
-                    }
+
+                { da && da.map( d =>  <ShowCard
+                                            key={d._id}
+                                            _id={d._id} 
+                                            name={d.name} 
+                                            type={d.type}
+                                            location={d.location}
+                                            img={d.image_urls.main}
+                                            bed={d.features.bed}
+                                            area={d.features.area}
+                                            bathroom={d.features.bathroom}
+                                            path={"properties"}
+                                        />
+                                    )
+                }
             
-                { da &&  da.length <= 0  && <>
-                            <p  style={{textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
+                { da &&  da.length == 0 && <>
+                             <p style={{textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
                             <Link to={".."}><p style={{textAlign: "center", color: "lightgreen"}}>Go Back</p></Link>
                          </>}
                 </div>
