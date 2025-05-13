@@ -102,7 +102,7 @@ function PropertyProfile(){
 
         <div className="properties-locaton">
           <Link to={`http://maps.google.co.uk/maps?q=${data.features.absolute_location.split(" ")[0]},${data.features.absolute_location.split(" ")[1]}`}>
-            <img src={data.features.location_img} alt="" />
+            <img src={data.location_img} alt="" />
           </Link>
         </div>
 

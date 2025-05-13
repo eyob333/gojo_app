@@ -84,11 +84,13 @@ app.post("/admin/database/upload", async (req, res) => {
     else if(schema === 'properties'){
       const newUrl = url;
       const nanUrl = newUrl.splice(1);
+      const lasturl = nanUrl.pop();
       data = {
         image_urls: {
           main: url[0],
           all: nanUrl
         },
+        location_img: lasturl,
         ...reqData
       }
     }
