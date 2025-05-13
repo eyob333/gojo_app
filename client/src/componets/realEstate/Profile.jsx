@@ -80,7 +80,7 @@ function Profile(){
                     </ul>
                 </div>
 
-                <div className={`profile-properties-response ${error || isLoading || da == {} || da == []? 'nogrid' : undefined}`} >
+                <div className={`profile-properties-response ${error || isLoading || da == {} || da ==[] ? 'nogrid' : undefined}`} >
 
 
 

@@ -148,7 +148,9 @@
 }
 .properties-search-result{
     display: grid;
-    grid-template-columns: 35% 35% 35%;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 20px;
 }
 .properties-search-result.serch-result-nogrid{
     margin-top: 2%;
