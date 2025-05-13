@@ -108,7 +108,7 @@ function Profile(){
                                     )
                 }
             
-                { da &&  da.length == 0 && <>
+                { da &&  da[0] == undefined && <>
                              <p style={{textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
                             <Link to={".."}><p style={{textAlign: "center", color: "lightgreen"}}>Go Back</p></Link>
                          </>}
