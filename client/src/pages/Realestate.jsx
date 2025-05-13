@@ -40,7 +40,7 @@ function Realestate(){
                 <h2 className="realestate-list-heading">RealEstates</h2>
                 <div className="realestae-body">
                     { isLoading && <div className="err-load" > <Loader /></div>}
-                    { !isLoading && !data.length && data.map( d => {
+                    { !isLoading && data.map( d => {
                             return <ProfileCards key={d._id} name={d.name} icon={d.image_url} />
                     })}
                 </div>
