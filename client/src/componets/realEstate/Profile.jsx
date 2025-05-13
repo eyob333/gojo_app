@@ -80,7 +80,7 @@ function Profile(){
                     </ul>
                 </div>
 
-                <div className={`profile-properties-response ${error || isLoading? 'nogrid' : undefined}`} >
+                <div className={`profile-properties-response ${error || isLoading || da == {} || da == []? 'nogrid' : undefined}`} >
 
 
 
@@ -108,7 +108,7 @@ function Profile(){
                                     )
                 }
             
-                { da &&  da[0] == undefined && <>
+                { (da == {} || da == []) &&  !error && !isLoading && <>
                              <p style={{textAlign: "center", paddingTop: "20px"}}>mmm.... looks like there is no properties for this realestae</p>
                             <Link to={".."}><p style={{textAlign: "center", color: "lightgreen"}}>Go Back</p></Link>
                          </>}
