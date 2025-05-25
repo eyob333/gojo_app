@@ -81,7 +81,7 @@ function Properties(){
                                 </select>
                         </div>
                         <div className="search-item">
-                            <span className="label" >Price Type</span>
+                            <span className="label" defaultValue="All" >Price Type</span>
                             <select name="price_type" className="value" onChange={handeleDataChange}> 
                                 <option value="Fixed">Fixed</option>
                                 <option value="Sqm">Sqm</option>

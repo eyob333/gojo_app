@@ -1,16 +1,52 @@
 import Deals from './home/BestDeals'
 import './Home.css'
 import { Link } from 'react-router-dom'
-
+import { useRef } from 'react'
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Home(){
+  const containerRef = useRef(null);
+
+  useGSAP( () => {
+
+      gsap.set(['.heading','.subHeading'], {
+        y: '100%',
+        scale: 1.5
+      });
+      gsap.set('hr',{
+        scaleX: 0,
+      })
+
+      gsap.to(".heading", {
+        y: 0,
+        scale: 1,
+        duration: .5,
+        ease: 'power2',
+      })
+
+      gsap.to(".subHeading", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: 'power1.inOut',
+      })
+      gsap.to('hr',{
+        scaleX: 1,
+        delay: 1,
+        duration: 1.7,
+        ease: 'power1.out'
+      })
+
+      
+    }, {});
 
     return <>
         <main> 
             <div id="main"> 
                 <div className="main-heading">
-                    <h1>Gojo Homes</h1>
-                    <h2>Where Your Perfect Home Awaits</h2>
+                    <h1 className='heading'>Gojo Homes</h1>
+                    <h2 className='subHeading'>Where Your Perfect Home Awaits</h2>
                 </div>
                 <hr/>
             </div>

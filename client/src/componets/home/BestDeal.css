@@ -8,13 +8,13 @@
 .show-items.nogrid{
   grid-template-columns: 100%;
 }
-@media ( 700px <= width <= 1000px){
+@media ( 501px <= width <= 1000px){
     .show-items{
-      grid-template-columns: 50% 50%;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-@media ( width <= 700px) {
+@media ( width <= 500px) {
   .show-items{
     grid-template-columns: repeat(1, 1fr);
   }
