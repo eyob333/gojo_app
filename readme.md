@@ -1,6 +1,5 @@
 # Real Estate Sales Web App (MERN)
-Visit [Gojo Homes]([https://gojo-home.vercel.app/]) for more projects.
-A simple MERN stack application for listing and managing real estate properties.
+Visit [Gojo Homes](https://gojo-home.vercel.app/) for more projects..
 
 ## Stack
 - MongoDB – Database
