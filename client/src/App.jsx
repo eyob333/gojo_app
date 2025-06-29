@@ -31,15 +31,19 @@ const route = createBrowserRouter([{
             { path: '', index: true, element: <Properties /> },
             { path: ':id', id: 'id', loader: sendRequest, element: <PropertyProfile /> }
         ]},
-        { path: 'admin', element: <AdminLogin /> },
         { path: 'contact', element: <Contact /> },
         { path: 'help', element: <NotAvailable /> },
         { path: 'about', element: <AboutUs /> },
         { path: 'api', element: <NotAvailable /> },
         { path: 'feedback', element: <Feedback />},
         { path: 'announcement', element: <HydrateFallback /> }
-    ]
-}]);
+    ]}, { 
+        path: 'admin',
+        hydrateFallbackElement: <HydrateFallback />,
+        errorElement: <Error />,
+        element: <AdminLogin />
+    }
+]);
 
 function App() {
     return <RouterProvider router={route} errorElement={<ErrorBoundary error={new Error('Something went wrong')} />} />;

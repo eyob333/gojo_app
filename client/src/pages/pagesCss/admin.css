@@ -5,10 +5,35 @@
     width: 100%;
     padding: 40px;
 }
+
 .admin-auth-form{
+    /* margin-top: 30vh; */
     padding: 100px;
     padding-top: 0;
     padding-left: 0;
     width: 300px;
 
 }
+
+.admin-auth .admin-imge{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom:  5vh;
+     width: 300px;
+}
+
+.admin-auth .admin-imge img{
+    margin-top: 1vh;
+    width: 200px;
+    height: 200px;
+}
+.admin-auth .admin-imge h3{
+    margin: 0;
+    font-family: 'eBuenaClassic', sans-serif;  
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;                                                                                                                                                                                                              
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+

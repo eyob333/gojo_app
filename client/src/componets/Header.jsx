@@ -31,7 +31,7 @@ function Header(){
 
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize);
-    },[]);
+    },[Window.ad]);
 
     
     return <header id="header">

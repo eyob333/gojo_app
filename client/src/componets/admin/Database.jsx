@@ -42,7 +42,7 @@ function Database(){
             <div className="database">
                 <div className="databae-headers">
                     {error && <Error/>}
-                    {loading && <Loader className={'database'} />}
+                    {loading && <Loader className='admin-page' />}
                     {data && data.map( d=> <Button key={d.name} className={`${selection === d.name && 'dbactive'}`} onClick={() => handleSelect(d.name)}><h4>{d.name}</h4></Button>) }
                        
                 </div>

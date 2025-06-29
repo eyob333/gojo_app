@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './dynamics-styles/NotAvalible.css'
 
-function NotAvailable(){
+function NotAvailable({name = undefined}){
 
     return  <>
         <div className="gear-container">
@@ -22,7 +22,7 @@ function NotAvailable(){
         </div>
         <div className='gear-text'>
             <p>This section is under construction...</p>
-            <Link to={'..'}><p>Go back</p></Link>
+            <Link to={'..'} ><p className={name}>Go back</p></Link>
         </div>
     </>
 }

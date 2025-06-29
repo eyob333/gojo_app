@@ -1,18 +1,18 @@
+import { useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 import Deals from './home/BestDeals'
 import './Home.css'
-import { Link } from 'react-router-dom'
-import { useRef } from 'react'
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+
 
 function Home(){
-  const containerRef = useRef(null);
 
   useGSAP( () => {
 
       gsap.set(['.heading','.subHeading'], {
         y: '100%',
-        scale: 1.5
+        scale: 1.5,
       });
       gsap.set('hr',{
         scaleX: 0,

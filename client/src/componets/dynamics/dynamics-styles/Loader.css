@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: center;
 }
+.loading-container.admin-page {
+    margin-top: 20vh;
+
+}
 
 .location-pin {
     width: 40px;

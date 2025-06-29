@@ -14,7 +14,6 @@ body {
     background: linear-gradient(90deg, rgba(203,228,217,1) 31%, rgba(157,188,178,1) 72%, rgba(95,154,138,1) 100%); */
     background: rgb(224,215,219);
     background: radial-gradient(circle, rgb(45, 68, 74) 0%, rgb(40, 40, 42) 30%); 
-    padding: .1% 5%;
     margin: 0;
   
   }

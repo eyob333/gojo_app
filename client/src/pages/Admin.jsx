@@ -37,10 +37,13 @@ const AdminLogin = () => {
   };
 
   return ( <>
-    
       { !isAuth ? <div className="admin-auth">
+          <div className="admin-imge">
+            <img src="/images/gojo1.webp" alt="" />
+            <h3> Gojo Homes</h3>
+          </div>
           <h3>Admin Login</h3>
-          <form className="admin-auth-form" onSubmit={handleLogin}>
+          <form className="admin-auth-form" onSubmit={handleLogin} autoSave="true" autoComplete="true">
             <input
               type="text"
               placeholder="Username or email"
@@ -61,7 +64,7 @@ const AdminLogin = () => {
               autoComplete="true"
             />
             {error && <p style={{ color: "red" }}>{error}</p>}
-            <button type="submit" disabled={loading} style={{ width: "50%", padding: "8px", marginTop: "10px" }}>
+          <button autoSave="ture" type="submit" disabled={loading} style={{ width: "50%", padding: "8px", marginTop: "10px" }} >
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>

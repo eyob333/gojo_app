@@ -23,6 +23,11 @@
     text-align: center;
     margin-bottom: 20%;
 }
+
+.admin-loading{
+    margin-top: 12px;
+    color: #a7bcca;
+}
 @keyframes rotateGear {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -53,5 +58,4 @@
         margin-bottom: 40%;
     }
 
-  
 }

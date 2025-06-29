@@ -2,7 +2,7 @@
 .database-view-pre{
     padding: 4%;
     color: rgb(255, 255, 255);
-    /* overflow-x:scroll; */
+    overflow-x:scroll;
 }
 code{
     overflow-block:scroll;

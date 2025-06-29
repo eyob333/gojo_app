@@ -4,9 +4,11 @@ import Footer from "../componets/Footer";
 
 function Root(){
     return <>
-        <Header />
-            <Outlet />
-        <Footer />
+        <div style={{padding: '.1% 5%'}} id="main-client-cont">
+            <Header />
+                <Outlet />
+            <Footer />
+        </div>
     </>
 }
 
