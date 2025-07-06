@@ -8,7 +8,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [isAuth, setIsAuth] = useState(false)
+  const [isAuth, setIsAuth] = useState(true)
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const AdminLogin = () => {
       const filter = {
         username: username
       }
-      const URL = import.meta.env.VITE_SERVER_URL;1424
+      const URL = import.meta.env.VITE_SERVER_URL;
       const response = await axios.post( URL + "admin", { filter, schema:"admin", data });
       console.log("Login successful: ", response.data);
       console.log("foo", response)
@@ -31,7 +31,6 @@ const AdminLogin = () => {
     } catch (err) {
       console.error("Login error: ", err);
       setError("Invalid credentials");
-    } finally {
       setLoading(false);
     }
   };

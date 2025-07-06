@@ -26,7 +26,7 @@ function AdminHome({admin = 'admin'}){
 
     useGSAP( () => {    
         const menuToggle = document.querySelector('.menu-toggle');
-        let menuStatus = true;
+        let menuStatus = false;
 
         const menuTl = gsap.timeline({
             defaults: {
@@ -38,9 +38,10 @@ function AdminHome({admin = 'admin'}){
         menuTl
             .to( ['main.admin-svg', 'aside'], {
                 x: 0,
-                stagger: .1
+                stagger: .1,
+                zIndex: 1
             })
-            .pause(true)
+            .reverse()
 
         menuToggle.addEventListener('click', () => {
             if (!menuStatus){
