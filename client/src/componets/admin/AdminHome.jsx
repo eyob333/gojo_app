@@ -39,7 +39,7 @@ function AdminHome({admin = 'admin'}){
             .to( ['main.admin-svg', 'aside'], {
                 x: 0,
                 stagger: .1,
-                zIndex: 1
+                zIndex: 2
             })
             .reverse()
 
