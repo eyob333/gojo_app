@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import ErrorBoundary from './componets/dynamics/ErrorBoundary';
 import Feedback from './pages/Feedback';
+import AdminProperties from './componets/admin/properties/Properties';
 
 const route = createBrowserRouter([{
     path: '',
@@ -38,10 +39,27 @@ const route = createBrowserRouter([{
         { path: 'feedback', element: <Feedback />},
         { path: 'announcement', element: <HydrateFallback /> }
     ]}, { 
-        path: 'admin',
+        path: 'admin',   
         hydrateFallbackElement: <HydrateFallback />,
         errorElement: <Error />,
-        element: <AdminLogin />
+        element: <AdminLogin />,
+        children: [
+            { path: 'dashboard', element: <Contact /> },
+            { path: 'analyitics', element: <NotAvailable /> },
+            { path: 'realestate', children: [
+                {path: '', index: true, element: <NotAvailable />},
+                {path: 'create', element: <h1>hell0</h1>}
+            ]},
+            { path: 'database', element: <NotAvailable /> },
+            { path: 'properties', children: [
+                {path: '', index: true, element: <AdminProperties/>},
+                {path: 'create', element: <h1>hell0</h1>}
+            ]},
+            { path: 'users', element: <HydrateFallback /> },
+            { path: 'issues', element: <NotAvailable /> },
+            { path: 'clients', element: <HydrateFallback /> },
+            { path: 'announcement', element: <HydrateFallback /> },
+        ]
     }
 ]);
 

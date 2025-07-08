@@ -1,0 +1,47 @@
+
+.admin-control-cards-container{
+    margin-top: 20px;
+    background-color: rgba(93, 143, 186, 0.11);
+    border-radius: 12px;
+    padding: 12px;
+    background-image: url("/images/photo_2025-03-07_15-29-34.webp");
+    background-color: rgba(255, 249, 249, 0.251); 
+    height: 170px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    /* filter: grayscale(1) brightness(.5); */
+
+}
+
+.admin-control-cards-container .admin-control-cards-headers{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+
+}
+.admin-control-cards-headers h4, .admin-control-cards-headers h5{
+    margin: 0;
+}
+.admin-control-cards-headers h5{
+    font-weight: 400;
+}
+.admin-control-cards-container .admin-control-cards-headers-icons-container{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    gap: 20px;
+    height: 50px;
+}
+
+.admin-control-cards-headers-icons svg.control-icons-svg{
+    margin: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.admin-control-cards-content-info{
+    position: relative;
+    top: 0;
+    right: 0;
+}

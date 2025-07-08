@@ -6,23 +6,20 @@ import './AdminHome.css'
 import NotAvaliable from "../dynamics/NotAvailable"
 import Database from "./Database"
 import Loader from "../dynamics/Loader";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function AdminHome({admin = 'admin'}){
-    const [render, setrender] = useState('analytics')
+    const [render, setrender] = useState(window.location.pathname.split('/').pop() || 'dashboard' )
     // const [menuStatus, setMenustatus] = useEffect()
+    const hash = window.location.pathname.split('/').pop()
+    console.log(hash)
+
 
     function handleClick(id){
         setrender(id)
     }
 
-    useEffect( () => {
-        function handleResize(){
-            setSize(window.innerWidth)
-        }
-
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize);
-    },[]);
 
     useGSAP( () => {    
         const menuToggle = document.querySelector('.menu-toggle');
@@ -39,7 +36,7 @@ function AdminHome({admin = 'admin'}){
             .to( ['main.admin-svg', 'aside'], {
                 x: 0,
                 stagger: .1,
-                zIndex: 2
+                zIndex: 2,
             })
             .reverse()
 
@@ -62,73 +59,92 @@ function AdminHome({admin = 'admin'}){
                 <nav>
                     <ul>
                         <li>
-                            <div className="mask">
+                            <div className="mask">  
                                 <Button className={`admin-option-btn ${render ==='dashboard' && 'active'}`} disabled={render ==='dashboard' && true} onClick={() => handleClick('dashboard')} >
-                                    <h4>Dashboard</h4>
+                                    <Link to={'dashboard'}>   
+                                        <h4>Dashboard</h4>
+                                    </Link>
                                 </Button>
                             </div>
                         </li>
 
                         <li>
-                            <div className="mask">
+                            <div className="mask">  
                                 <Button className={`admin-option-btn ${render ==='analytics' && 'active'}`} disabled={render ==='analytics' && true} onClick={() => handleClick('analytics')} >
-                                    <h4>Analytics</h4>
+                                    <Link to={'analyitics'} >   
+                                        <h4>Analytics</h4>
+                                    </Link>
                                 </Button>
                             </div>
                         </li>
 
                         <li>
-                            <div className="mask">
+                            <div className="mask"> 
                                 <Button className={`admin-option-btn ${render ==='properties' && 'active'}`} disabled={render ==='properties' && true} onClick={() => handleClick('properties')} >
-                                    <h4>Properties</h4>
+                                    <Link to={'properties'}>  
+                                            <h4>Properties</h4>
+                                    </Link>
                                 </Button>
                             </div>
                         </li>
 
                         <li>
-                            <div className="mask">
+                            <div className="mask">  
                                 <Button className={`admin-option-btn ${render ==='realestate' && 'active'}`} disabled={render ==='realestate' && true} onClick={() => handleClick('realestate')} >
-                                    <h4>RealEstate</h4>
+                                    <Link to={'realestate'}>          
+                                        <h4>RealEstate</h4>
+                                    </Link>
                                 </Button>
                             </div>
                         </li>
 
 
                         <li>
-                            <div className="mask">
-                                <Button className={`admin-option-btn ${render ==='database' && 'active'}`} disabled={render ==='database' && true}  onClick={() => handleClick('database')} >
-                                    <h4>Database</h4>
-                                </Button>
+                            <div className="mask">                                    <Button className={`admin-option-btn ${render ==='database' && 'active'}`} disabled={render ==='database' && true}  onClick={() => handleClick('database')} >
+
+                                <Link to={'database'}>  
+                                        <h4>Database</h4>
+                                </Link></Button>
                             </div>
                         </li>
 
                         <li>
-                            <div className="mask">
+                            <div className="mask">  
                                 <Button className={`admin-option-btn ${render ==='issues' && 'active'}`} disabled={render ==='issues' && true} onClick={() => handleClick('issues')} >
-                                    <h4>Issues</h4>
+                                    <Link to={'issues'}> 
+                                            <h4>Issues</h4>
+                                    </Link>
                                 </Button>
                             </div>
                         </li>
 
                         <li>
-                            <div className="mask">
+                            <div className="mask">                                    
                                 <Button className={`admin-option-btn ${render ==='announcement' && 'active'}`} disabled={render ==='announcement' && true} onClick={() => handleClick('announcement')} >
-                                    <h4>Announcement</h4>
+                                    <Link to={'announcement'}> 
+                                        <h4>Announcement</h4>
+                                    </Link>
                                  </Button>
                             </div>
                         </li>
 
                         <li>
-                            <div className="mask">
+                            <div className="mask">                                    
                                 <Button className={`admin-option-btn ${render ==='clients' && 'active'}`} disabled={render ==='clients' && true} onClick={() => handleClick('clients')} >
-                                    <h4>Clients</h4>
+                                    <Link to={'clients'}>  
+                                        <h4>Clients</h4>
+                                    
+                                    </Link> 
                                  </Button>
                             </div>
                         </li>
                         <li>
-                            <div className="mask">
-                                <Button className={`admin-option-btn ${render ==='users' && 'active'}`} disabled={render ==='users' && true} onClick={() => handleClick('users')} >
-                                    <h4>Users</h4>
+                            <div className="mask">     
+                                <Button  className={`admin-option-btn ${render ==='users' && 'active'}`} disabled={render ==='users' && true} onClick={() => handleClick('users')} >
+                                    <Link to={'users'}>  
+                                        <h4>Users</h4>
+                                        
+                                    </Link>
                                  </Button>
                             </div>
                         </li>
@@ -151,7 +167,7 @@ function AdminHome({admin = 'admin'}){
                     </div>
 
                     <div>
-                        { render === 'database' &&  <Database />}
+                        {/* { render === 'database' &&  <Database />}
                         { render === 'dashboard' && <NotAvaliable name='admin-loading' />}
                         { render === 'analytics' && <NotAvaliable name='admin-loading' />}
                         { render === 'clients' && <NotAvaliable name='admin-loading' />}
@@ -159,7 +175,8 @@ function AdminHome({admin = 'admin'}){
                         { render === 'properties' && <NotAvaliable name='admin-loading' />}
                         { render === 'realestate' && <NotAvaliable name='admin-loading' />}
                         { render === 'users' && <NotAvaliable name='admin-loading' />}
-                        { render === 'announcement' && <Loader className='admin-page' />}
+                        { render === 'announcement' && <Loader className='admin-page' />} */}
+                        < Outlet />
                     </div>
                    
                 </div>

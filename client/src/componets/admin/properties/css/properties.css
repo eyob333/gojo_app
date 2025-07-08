@@ -1,0 +1,49 @@
+.admin-view-section-containter{
+    padding: 10px 20px;
+}
+
+.admin-view-section-header{
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    justify-content: flex-end;
+    align-items: center; */
+    text-align: right;
+    gap: 15vw;
+}
+.admin-view-section-header h3{
+    margin: 0;
+    font-weight: 400;
+}
+.admin-view-section-header .admin-edit-btn{
+    display: flex;
+    justify-content:space-around;
+    border: 0;
+    width: 50px;
+}
+.admin-view-section-header .admin-edit-btn .database-icons{
+    width: 30px;
+}
+
+.admin-view-section-content-data{
+    display: grid;
+    padding: 5px 40px;
+    grid-template-columns: repeat(3 ,1fr);
+    gap: 10px;
+}
+
+@media ( 576px <= width <= 768px){
+    .admin-view-section-content-data{
+        grid-template-columns: repeat(2 ,1fr);
+    }
+  }
+
+@media ( width <= 576px) {
+    .admin-view-section-content-data{
+        grid-template-columns: repeat(1 ,1fr);
+    }
+}
+
+
+/* :hover.admin-edit-btn{
+    background-color: bisque;
+} */
