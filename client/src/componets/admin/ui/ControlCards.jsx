@@ -1,4 +1,4 @@
-import './css/ControlCard.css'
+import './css/controlCard.css'
 
 function ControlCards({project, realestate, bedroom, price, img}){
 
