@@ -63,7 +63,7 @@ class DataBase{
                 site: Number
             },
             properties: {type: Number, default: null},
-            icons: {type: String},
+            icons: [],
             description: {type: String},
             image_url: {type: String, default: null},
             sales_name: {type:String},

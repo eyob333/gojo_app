@@ -16,6 +16,9 @@ import AboutUs from './pages/AboutUs';
 import ErrorBoundary from './componets/dynamics/ErrorBoundary';
 import Feedback from './pages/Feedback';
 import AdminProperties from './componets/admin/properties/Properties';
+import AdminRealestate from './componets/admin/realestate/Realestate';
+import UploadProperties from './componets/admin/Dmods/UploadProperties';
+import FileUpload from './componets/admin/Dmods/Upload';
 
 const route = createBrowserRouter([{
     path: '',
@@ -47,13 +50,13 @@ const route = createBrowserRouter([{
             { path: 'dashboard', element: <Contact /> },
             { path: 'analyitics', element: <NotAvailable /> },
             { path: 'realestate', children: [
-                {path: '', index: true, element: <NotAvailable />},
-                {path: 'create', element: <h1>hell0</h1>}
+                {path: '', index: true, element: <AdminRealestate />},
+                {path: 'create', element: <FileUpload />}
             ]},
             { path: 'database', element: <NotAvailable /> },
             { path: 'properties', children: [
                 {path: '', index: true, element: <AdminProperties/>},
-                {path: 'create', element: <h1>hell0</h1>}
+                {path: 'create', element: <UploadProperties />}
             ]},
             { path: 'users', element: <HydrateFallback /> },
             { path: 'issues', element: <NotAvailable /> },

@@ -1,6 +1,7 @@
 .upload {
-    padding: 10px 40px;
-    width: 80%;
+    display: grid;
+    padding: 10px 60px;
+    /* width: 80%; */
     height: fit-content;
     color: aliceblue;
 }
@@ -57,6 +58,8 @@ label p{
 @media (width < 530px) {
     .input-field{
         grid-template-columns: 100%;
-    
+    }
+    .upload{
+        padding: 5px 30px;
     }
 }

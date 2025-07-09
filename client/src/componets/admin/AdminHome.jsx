@@ -10,10 +10,10 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function AdminHome({admin = 'admin'}){
-    const [render, setrender] = useState(window.location.pathname.split('/').pop() || 'dashboard' )
+    const [render, setrender] = useState(window.location.pathname.split('/').pop() == 'admin' || undefined?  'dashboard':  window.location.pathname.split('/').pop())
     // const [menuStatus, setMenustatus] = useEffect()
     const hash = window.location.pathname.split('/').pop()
-    console.log(hash)
+    console.log(render)
 
 
     function handleClick(id){

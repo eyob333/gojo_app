@@ -1,13 +1,25 @@
 import './css/controlCard.css'
 
-function ControlCards({project, realestate, bedroom, price, img}){
+function ControlCards({
+        //for properties
+        project, 
+        realestate, 
+        bedroom, 
+        price, 
+       
+        //for realestate
+        name,
+        headOffice,
+        //common
+        img
+    }){
 
     return <>
         <div className="admin-control-cards-container" style={{backgroundImage:`URL(${img})`}}>
             <div className="admin-control-cards-headers">
                 <div className='admin-control-cards-headers-heading'>
-                    <h4>{project}</h4>
-                    <h5>{realestate}</h5>
+                    <h4>{project || name}</h4>
+                    <h5>{realestate || headOffice}</h5>
                 </div>
                 <div className='admin-control-cards-headers-icons-container'>
                     <div className='admin-control-cards-headers-icons'>

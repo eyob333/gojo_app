@@ -272,7 +272,6 @@ main{
 
   
 @media ( width <= 576px) {
-
   #main {
     background-image: url("/images/forScreenSmall.webp"); 
   }

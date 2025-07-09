@@ -45,7 +45,7 @@ const FileUpload = (...props) => {
     setLoading(true);
     try {
       const reqFormat = {
-        realEstate: String(data.realEstate).toUpperCase(),
+        name: String(data.realEstate).toUpperCase(),
         rating: Number(data.rating),
         project: {
             project_total: Number(data.project),
@@ -61,7 +61,7 @@ const FileUpload = (...props) => {
       }
       const URL = import.meta.env.VITE_SERVER_URL;
       const response = await axios.post( URL + "admin/database/upload", { images: previews, data: reqFormat, schema: "realestate"});
-      console.log("Upload successful: ", response.data);
+      console.log("Upload successful: ", response);
       alert("Files uploaded successfully!");
     } catch (error) {
       console.error("Upload error: ", error);

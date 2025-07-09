@@ -68,6 +68,7 @@ app.post('/admin/database', async(req, res) => {
 });
 
 app.post("/admin/database/upload", async (req, res) => {
+  console.log('server is down')
   try{
     const url = await uploader.upload_imgs( req, res) 
     const reqData = req.body.data
@@ -75,9 +76,11 @@ app.post("/admin/database/upload", async (req, res) => {
     let data = reqData
 
     if (schema === 'realestate'){
+      const newUrl = url;
+      const nanUrl = newUrl.splice(1);
       data = {
-        icons: url[0],
-        image_urls: url[1],
+        icons: nanUrl,
+        image_url: url[0],
         ...reqData
       }
     }
@@ -93,13 +96,14 @@ app.post("/admin/database/upload", async (req, res) => {
         location_img: lasturl,
         ...reqData
       }
+
     }
     const database = await db.addData(data, schema)
     console.log(database)
-    res.send("okay").status(200)
+    res.send("okay")
   } catch (err){
     console.log("some foo", err);
-    res.send(err)
+    res.send(err).statusCode(404)
   }
   
 });

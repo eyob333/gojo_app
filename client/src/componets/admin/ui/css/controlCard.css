@@ -45,3 +45,20 @@
     top: 0;
     right: 0;
 }
+
+@media ( 576px <= width <= 768px){
+ 
+}
+
+  
+@media ( width <= 576px) {
+    .admin-control-cards-container .admin-control-cards-headers-icons-container{
+        gap: 10px;
+        height: 50px;
+    }
+
+    .admin-control-cards-headers-icons svg.control-icons-svg{
+        width: 20px;
+        height: 20px;
+    }
+}
