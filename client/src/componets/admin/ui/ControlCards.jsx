@@ -1,5 +1,23 @@
 import './css/controlCard.css'
 
+function applyBlurAndGrayscale(cloudinaryUrl, blurAmount = 200) {
+  // Check if the URL is valid and contains 'upload/'
+  const uploadIndex = cloudinaryUrl.indexOf('/upload/');
+  if (uploadIndex === -1) {
+    throw new Error("Invalid Cloudinary URL: missing '/upload/'");
+  }
+
+  // Build the transformation string
+  const transformation = `e_blur:${blurAmount},e_grayscale`;
+
+  // Insert the transformation into the URL
+  const before = cloudinaryUrl.substring(0, uploadIndex + 8); // includes "/upload/"
+  const after = cloudinaryUrl.substring(uploadIndex + 8);     // after "/upload/"
+  const transformedUrl = `${before}${transformation}/${after}`;
+
+  return transformedUrl;
+}
+
 function ControlCards({
         //for properties
         project, 
@@ -14,8 +32,10 @@ function ControlCards({
         img
     }){
 
+    const transformedImg = applyBlurAndGrayscale(img)
+
     return <>
-        <div className="admin-control-cards-container" style={{backgroundImage:`URL(${img})`}}>
+        <div className="admin-control-cards-container" style={{backgroundImage:`URL(${transformedImg})`}}>
             <div className="admin-control-cards-headers">
                 <div className='admin-control-cards-headers-heading'>
                     <h4>{project || name}</h4>
